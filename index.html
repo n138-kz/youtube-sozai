@@ -379,6 +379,13 @@
 						.forEach((e2)=>{
 							e2.checked=e1.target.checked;
 						});
+						if ( e1.target.checked === false) {
+							/* 全選択ボタンの解除用 */
+							document.querySelectorAll('#genre_background_music label>input')
+							.forEach((e2)=>{
+								e2.checked=false;
+							});
+						}
 					}, false
 				);
 				document.querySelectorAll('#genre_background_music_DOVA-SYNDROME label>input.control_panels').item(0)
