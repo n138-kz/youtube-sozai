@@ -423,6 +423,8 @@
 	</div>
 	<div id="genre_editedby">
 		<h2>▼編集</h2>
+		<label><input type="checkbox" name="" class="control_panels">全選択</label>
+
 		<label class="inlineobj_line">
 			<input type="checkbox" name="" data-hashtag='["AviUtl"]' data-href="https://spring-fragrance.mints.ne.jp/aviutl/">
 			AviUtl
@@ -432,6 +434,18 @@
 			<input type="checkbox" name="" data-hashtag='["PSDToolKit"]' data-href="https://oov.github.io/aviutl_psdtoolkit/index.html">
 			PSDToolKit
 		</label>
+
+		<script>
+			document.querySelectorAll('#genre_editedby label>input.control_panels').item(0)
+			.addEventListener(
+				'click', (e1)=>{
+					document.querySelectorAll('#genre_editedby label>input:not(.control_panels)')
+					.forEach((e2)=>{
+						e2.checked=e1.target.checked;
+					});
+				}, false
+			);
+		</script>
 	</div>
 	<div id="genre_quotes">
 		<h2>▼出典</h2>
