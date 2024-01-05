@@ -325,6 +325,8 @@
 	</div>
 	<div id="genre_niconi_commons">
 		<h2>▼ニコニ・コモンズ</h2>
+		<label><input type="checkbox" name="" class="control_panels">全選択</label>
+
 		<label class="inlineobj_line">
 			<input type="checkbox" name="" data-hashtag='["nc269995", "ガッkoya"]' data-href="https://commons.nicovideo.jp/works/nc269995">
 			nc269995 / ガッkoya 様
@@ -349,6 +351,18 @@
 			<input type="checkbox" name="" data-hashtag='["nc315225", "ｍあ"]' data-href="https://commons.nicovideo.jp/works/nc315225">
 			nc315225 / ｍあ 様
 		</label>
+
+		<script>
+			document.querySelectorAll('#genre_niconi_commons label>input.control_panels').item(0)
+			.addEventListener(
+				'click', (e1)=>{
+					document.querySelectorAll('#genre_niconi_commons label>input:not(.control_panels)')
+					.forEach((e2)=>{
+						e2.checked=e1.target.checked;
+					});
+				}, false
+			);
+		</script>
 	</div>
 	<div id="genre_background_image">
 		<h2>▼背景</h2>
