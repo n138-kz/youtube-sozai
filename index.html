@@ -45,9 +45,23 @@
 				padding-top: 10px;
 				padding-bottom: 10px;
 				padding-left: 10px;
-				border: 1px solid tan;
-				background-color: tan;
+				background: linear-gradient(lavender, lightskyblue);
 				border-radius: 5% 25% 25% 5%;
+			}
+			#paramlist_list a::before {
+				content: '★';
+			}
+			#paramlist_list a::after {
+				content: '';
+			}
+			#paramlist_list a:link {
+				color: blue;
+			}
+			#paramlist_list a:hover {
+				color: navy;
+			}
+			#paramlist_list a:visited {
+				color: indigo;
 			}
 			#paramlist_list a {
 				display: flex;
