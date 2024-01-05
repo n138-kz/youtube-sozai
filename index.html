@@ -382,6 +382,8 @@
 	</div>
 	<div id="genre_other">
 		<h2>▼その他（敬称省略）</h2>
+		<label><input type="checkbox" name="" class="control_panels">全選択</label>
+
 		<label class="inlineobj_line">
 			<input type="checkbox" name="" data-hashtag='["icooon-mono"]' data-href="https://icooon-mono.com/">
 			icooon-mono
@@ -406,6 +408,18 @@
 			<input type="checkbox" name="" data-hashtag='["写真AC"]' data-href="https://www.photo-ac.com/">
 			写真AC
 		</label>
+
+		<script>
+			document.querySelectorAll('#genre_other label>input.control_panels').item(0)
+			.addEventListener(
+				'click', (e1)=>{
+					document.querySelectorAll('#genre_other label>input:not(.control_panels)')
+					.forEach((e2)=>{
+						e2.checked=e1.target.checked;
+					});
+				}, false
+			);
+		</script>
 	</div>
 	<div id="genre_editedby">
 		<h2>▼編集</h2>
