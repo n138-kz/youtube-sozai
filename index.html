@@ -366,6 +366,19 @@
 	</div>
 	<div id="genre_background_image">
 		<h2>▼背景</h2>
+		<label><input type="checkbox" name="" class="control_panels">全選択</label>
+
+		<script>
+			document.querySelectorAll('#genre_background_image label>input.control_panels').item(0)
+			.addEventListener(
+				'click', (e1)=>{
+					document.querySelectorAll('#genre_background_image label>input:not(.control_panels)')
+					.forEach((e2)=>{
+						e2.checked=e1.target.checked;
+					});
+				}, false
+			);
+		</script>
 	</div>
 	<div id="genre_other">
 		<h2>▼その他（敬称省略）</h2>
