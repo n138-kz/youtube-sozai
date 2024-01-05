@@ -244,7 +244,7 @@
 	<div class="control_panels" id="paramlist_list">
 		<script defer>
 			window.addEventListener('DOMContentLoaded', (e1)=>{
-				document.querySelectorAll('h2').forEach((e2)=>{
+				document.querySelectorAll('h2:not(.hidden)').forEach((e2)=>{
 					console.debug(e2.innerText);
 					var a_tag_linkto=document.createElement('a');
 					var a_tag_linkto_namestr='';
