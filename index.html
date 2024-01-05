@@ -29,6 +29,24 @@
 		#paramlist_list a::after, #paramlist_list a::before {
 			content: '★';
 		}
+		@media screen and (min-width:480px) {
+			#paramlist_list {
+				width: 300px;
+				position: fixed;
+				right: 10px;
+				bottom: 10px;
+				padding-top: 10px;
+				padding-bottom: 10px;
+				padding-left: 10px;
+				border: 1px solid tan;
+				background-color: tan;
+				border-radius: 5% 25% 25% 5%;
+			}
+			#paramlist_list a {
+				display: flex;
+				margin-right: auto;
+			}
+		}
 		.control_panels {
 		}
 		.non_control_panels {
