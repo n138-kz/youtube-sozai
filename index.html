@@ -49,27 +49,27 @@
 </head>
 <body>
 	<div class="control_panels" id="control_panel_top">
-		<div class="control_panels" id="paramlist_list">
-			<script defer>
-				window.addEventListener('DOMContentLoaded', (e1)=>{
-					document.querySelectorAll('h2').forEach((e2)=>{
-						console.log(e2.innerText);
-						var a_tag_linkto=document.createElement('a');
-						var a_tag_linkto_namestr='';
-						for (let i999 = 0; a_tag_linkto_namestr.length < 16; i999++) {
-							a_tag_linkto_namestr+=String.fromCharCode(getRandomInt(97, 122));
-						}
-						a_tag_linkto.name=a_tag_linkto_namestr;
-						e2.before(a_tag_linkto);
-	
-						var a_tag_link=document.createElement('a');
-						a_tag_link.innerText=(e2.innerText).substr(0-(e2.innerText).length+1);
-						a_tag_link.href='#' + a_tag_linkto.name;
-						document.querySelectorAll('#paramlist_list').item(0).appendChild(a_tag_link);
-					});
+	</div>
+	<div class="control_panels" id="paramlist_list">
+		<script defer>
+			window.addEventListener('DOMContentLoaded', (e1)=>{
+				document.querySelectorAll('h2').forEach((e2)=>{
+					console.log(e2.innerText);
+					var a_tag_linkto=document.createElement('a');
+					var a_tag_linkto_namestr='';
+					for (let i999 = 0; a_tag_linkto_namestr.length < 16; i999++) {
+						a_tag_linkto_namestr+=String.fromCharCode(getRandomInt(97, 122));
+					}
+					a_tag_linkto.name=a_tag_linkto_namestr;
+					e2.before(a_tag_linkto);
+
+					var a_tag_link=document.createElement('a');
+					a_tag_link.innerText=(e2.innerText).substr(0-(e2.innerText).length+1);
+					a_tag_link.href='#' + a_tag_linkto.name;
+					document.querySelectorAll('#paramlist_list').item(0).appendChild(a_tag_link);
 				});
-			</script>
-		</div>
+			});
+		</script>
 	</div>
 	<div class="non_control_panels">
 		<div id="genre_plaied_game">
