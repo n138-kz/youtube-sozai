@@ -179,6 +179,7 @@
 			 * * - なにも処理せず次へ
 			*/
 			let output_multiline_description=document.querySelectorAll('#output_multiline_description').item(0);
+			let output_multiline_hashTag=document.querySelectorAll('#output_multiline_hash-tag').item(0);
 			let output_multiline_metaTag=document.querySelectorAll('#output_multiline_meta-tag').item(0);
 			localStorage.setItem( (btoa(location.href)).slice(0, 16) + '.' + 'tmp', null );
 
@@ -223,6 +224,7 @@
 	<div id="output_multiline">
 		<textarea name="" id="output_multiline_description"></textarea>
 		<textarea name="" id="output_multiline_meta-tag"></textarea>
+		<textarea name="" id="output_multiline_hash-tag"></textarea>
 
 		<script>
 			let output_multiline_description_inival = '';
