@@ -465,10 +465,24 @@
 	</div>
 	<div id="genre_special_thunks">
 		<h2>▼スペシャルサンクス</h2>
+		<label><input type="checkbox" name="" class="control_panels">全選択</label>
+
 		<label class="inlineobj_line">
 			<input type="checkbox" name="" data-hashtag='[""]' data-href="">
 			視聴者のみなさん
 		</label>
+
+		<script>
+			document.querySelectorAll('#genre_special_thunks label>input.control_panels').item(0)
+			.addEventListener(
+				'click', (e1)=>{
+					document.querySelectorAll('#genre_special_thunks label>input:not(.control_panels)')
+					.forEach((e2)=>{
+						e2.checked=e1.target.checked;
+					});
+				}, false
+			);
+		</script>
 	</div>
 	<div id="genre_sns_twitter">
 		<h2>▼X(Twitter)</h2>
