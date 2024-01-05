@@ -43,498 +43,500 @@
 </head>
 <body>
 	<div class="control_panels" id="control_panel_top">
-	</div>
-	<div class="control_panels" id="paramlist_list">
-		<script defer>
-			window.addEventListener('DOMContentLoaded', (e1)=>{
-				document.querySelectorAll('h2').forEach((e2)=>{
-					console.log(e2.innerText);
-					var a_tag_linkto=document.createElement('a');
-					var a_tag_linkto_namestr='';
-					for (let i999 = 0; a_tag_linkto_namestr.length < 16; i999++) {
-						a_tag_linkto_namestr+=String.fromCharCode(getRandomInt(97, 122));
-					}
-					a_tag_linkto.name=a_tag_linkto_namestr;
-					e2.before(a_tag_linkto);
-
-					var a_tag_link=document.createElement('a');
-					a_tag_link.innerText=(e2.innerText).substr(0-(e2.innerText).length+1);
-					a_tag_link.href='#' + a_tag_linkto.name;
-					document.querySelectorAll('#paramlist_list').item(0).appendChild(a_tag_link);
+		<div class="control_panels" id="paramlist_list">
+			<script defer>
+				window.addEventListener('DOMContentLoaded', (e1)=>{
+					document.querySelectorAll('h2').forEach((e2)=>{
+						console.log(e2.innerText);
+						var a_tag_linkto=document.createElement('a');
+						var a_tag_linkto_namestr='';
+						for (let i999 = 0; a_tag_linkto_namestr.length < 16; i999++) {
+							a_tag_linkto_namestr+=String.fromCharCode(getRandomInt(97, 122));
+						}
+						a_tag_linkto.name=a_tag_linkto_namestr;
+						e2.before(a_tag_linkto);
+	
+						var a_tag_link=document.createElement('a');
+						a_tag_link.innerText=(e2.innerText).substr(0-(e2.innerText).length+1);
+						a_tag_link.href='#' + a_tag_linkto.name;
+						document.querySelectorAll('#paramlist_list').item(0).appendChild(a_tag_link);
+					});
 				});
-			});
-		</script>
+			</script>
+		</div>
 	</div>
-	<div id="genre_plaied_game">
-		<h2>▼ゲーム</h2>
-		<label><input type="checkbox" name="" class="control_panels">全選択</label>
-
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["原神","Genshin Impact","Genshin","mihoyo", "hoyoverse"]' data-href="https://genshin.hoyoverse.com/ja">
-			原神 -Genshin Impact-
-		</label>
-
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["雀魂","じゃんたま"]' data-href="https://game.mahjongsoul.com/index.html">
-			雀魂 -じゃんたま-
-		</label>
-
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["JR EAST Train Simulator", "Train Simulator", "Simulator", "JR EAST", "JR東日本", "JR東日本トレインシミュレーター", "JR東日本トレインシミュレータ"]' data-href="https://store.steampowered.com/app/2111630/JR/">
-			JR EAST Train Simulator
-		</label>
-
-		<script>
-			document.querySelectorAll('#genre_plaied_game label>input.control_panels').item(0)
-			.addEventListener(
-				'click', (e1)=>{
-					document.querySelectorAll('#genre_plaied_game label>input:not(.control_panels)')
-					.forEach((e2)=>{
-						e2.checked=e1.target.checked;
-					});
-				}, false
-			);
-		</script>
-	</div>
-	<div id="genre_standing_picture">
-		<h2>▼立ち絵</h2>
-		<label><input type="checkbox" name="" class="control_panels">全選択</label>
-
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["ミリアル", "ふにちか", "im10766745"]' data-href="https://seiga.nicovideo.jp/seiga/im10766745">
-			ミリアル / im10766745 / ふにちか 様
-		</label>
-		
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["アベルーニ", "針無シ", "im10785533"]' data-href="https://seiga.nicovideo.jp/seiga/im10785533">
-			アベルーニ / im10785533 / 針無シ 様
-		</label>
-		
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["ずんだもん", "坂本アヒル", "im10788496"]' data-href="https://seiga.nicovideo.jp/seiga/im10788496">
-			ずんだもん / im10788496 / 坂本アヒル 様
-		</label>
-		
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["ずんだもん", "坂本アヒル", "im11148236"]' data-href="https://seiga.nicovideo.jp/seiga/im11148236">
-			ずんだもん / im11148236 / 坂本アヒル 様
-		</label>
-		
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["ずんだもん", "坂本アヒル", "im11206626"]' data-href="https://seiga.nicovideo.jp/seiga/im11206626">
-			ずんだもん / im11206626 / 坂本アヒル 様
-		</label>
-
-		<script>
-			document.querySelectorAll('#genre_standing_picture label>input.control_panels').item(0)
-			.addEventListener(
-				'click', (e1)=>{
-					document.querySelectorAll('#genre_standing_picture label>input:not(.control_panels)')
-					.forEach((e2)=>{
-						e2.checked=e1.target.checked;
-					});
-				}, false
-			);
-		</script>
-	</div>
-	<div id="genre_voice">
-		<h2>▼こえ</h2>
-		<label><input type="checkbox" name="" class="control_panels">全選択</label>
-
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["voiceroid", "ミリアル", "Coefont"]' data-href="https://coefont.cloud/">
-			Coefont：ミリアル Voiced by CoeFont.CLOUD
-		</label>
-		
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["voiceroid", "アベルーニ", "Coefont"]' data-href="https://coefont.cloud/">
-			Coefont：アベルーニ Voiced by CoeFont.CLOUD
-		</label>
-		
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["voiceroid", "ずんだもん", "VOICEVOX", "VOICE VOX"]' data-href="https://voicevox.hiroshiba.jp">
-			VOICE VOX：ずんだもん
-		</label>
-		
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["voiceroid", "中国うさぎ", "VOICEVOX", "VOICE VOX"]' data-href="https://voicevox.hiroshiba.jp">
-			VOICE VOX：中国うさぎ
-		</label>
-		
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["voiceroid", "東北きりたん", "AHS", "voiceroid+"]' data-href="https://www.ah-soft.com/voiceroid/kiritan/">
-			AHS：東北きりたん
-		</label>
-		
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["voiceroid", "紲星 あかり", "A.I.VOICE", "A.I.VOICE2", "A.I.VOICE 2"]' data-href="https://aivoice.jp/product/akari/">
-			A.I.VOICE2：紲星 あかり
-		</label>
-		
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["voiceroid", "琴葉 茜・葵", "琴葉 茜", "琴葉 葵", "A.I.VOICE"]' data-href="https://aivoice.jp/product/kotonoha/">
-			A.I.VOICE：琴葉 茜・葵
-		</label>
-
-		<script>
-			document.querySelectorAll('#genre_voice label>input.control_panels').item(0)
-			.addEventListener(
-				'click', (e1)=>{
-					document.querySelectorAll('#genre_voice label>input:not(.control_panels)')
-					.forEach((e2)=>{
-						e2.checked=e1.target.checked;
-					});
-				}, false
-			);
-		</script>
-	</div>
-	<div id="genre_font">
-		<h2>▼フォント</h2>
-		<label><input type="checkbox" name="" class="control_panels">全選択</label>
-
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["うずらフォント"]' data-href="https://fontfree.me/1248">
-			うずらフォント
-		</label>
-		
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["あずきフォント"]' data-href="http://azukifont.com/font/azuki.html">
-			あずきフォント
-		</label>
-		
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["Myrica", "プログラミングフォント"]' data-href="https://myrica.estable.jp/">
-			プログラミングフォント Myrica
-		</label>
-		
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["851テガキカクット"]' data-href="https://pm85122.onamae.jp/851H_kktt.html">
-			851テガキカクット
-		</label>
-		
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["MS UI Gothic"]' data-href="https://learn.microsoft.com/ja-jp/typography/font-list/ms-ui-gothic">
-			MS UI Gothic
-		</label>
-
-		<script>
-			document.querySelectorAll('#genre_font label>input.control_panels').item(0)
-			.addEventListener(
-				'click', (e1)=>{
-					document.querySelectorAll('#genre_font label>input:not(.control_panels)')
-					.forEach((e2)=>{
-						e2.checked=e1.target.checked;
-					});
-				}, false
-			);
-		</script>
-	</div>
-	<div id="genre_background_music">
-		<h2>▼BGM</h2>
-		<label><input type="checkbox" name="" class="control_panels">全選択</label>
-
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["DOVA-SYNDROME", "SUMMER TRIANGLE"]' data-href="https://youtu.be/SkQihFHiWt0">
-			SUMMER TRIANGLE @ DOVA-SYNDROME
-		</label>
-		
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["DOVA-SYNDROME", "bosquet"]' data-href="https://youtu.be/57Eap6g6uZ8">
-			bosquet @ DOVA-SYNDROME
-		</label>
-		
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["DOVA-SYNDROME", "2:23 AM"]' data-href="https://youtu.be/16Bj6aPi1A8">
-			2:23 AM @ DOVA-SYNDROME
-		</label>
-		
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["DOVA-SYNDROME", "奇妙な案内人"]' data-href="https://youtu.be/TxkWXdjkMeA">
-			奇妙な案内人 @ DOVA-SYNDROME
-		</label>
-		
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["DOVA-SYNDROME", "Gentle"]' data-href="https://youtu.be/WFlGnDrGsF0">
-			Gentle @ DOVA-SYNDROME
-		</label>
-		
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["DOVA-SYNDROME", "Pappa Parappa"]' data-href="https://youtu.be/vl4FzBh-8RA">
-			Pappa Parappa @ DOVA-SYNDROME
-		</label>
-		
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["DOVA-SYNDROME", "How to Cook"]' data-href="https://youtu.be/ma8Sj8CKEpQ">
-			How to Cook @ DOVA-SYNDROME
-		</label>
-		
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["DOVA-SYNDROME", "轍は続くよどこまでも的なBGM"]' data-href="https://youtu.be/jo5Fhr9CZzU">
-			轍は続くよどこまでも的なBGM @ DOVA-SYNDROME
-		</label>
-		
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["DOVA-SYNDROME", "Cefiro"]' data-href="https://youtu.be/qyWBdYJaRLY">
-			Cefiro @ DOVA-SYNDROME
-		</label>
-		
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["DOVA-SYNDROME", "追いかけっこキャッハー"]' data-href="https://youtu.be/TArfBA0Ywxo">
-			追いかけっこキャッハー @ DOVA-SYNDROME
-		</label>
-		
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["DOVA-SYNDROME", "shuffle shuffle"]' data-href="https://youtu.be/kNrOgRb_two">
-			shuffle shuffle @ DOVA-SYNDROME
-		</label>
-		
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["DOVA-SYNDROME", "10℃"]' data-href="https://youtu.be/pgjwcEpjhKE">
-			10℃ @ DOVA-SYNDROME
-		</label>
-		
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["DOVA-SYNDROME", "eye-catch"]' data-href="https://youtu.be/96SxE_fhJm8">
-			eye-catch @ DOVA-SYNDROME
-		</label>
-		
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["DOVA-SYNDROME", "作戦会議"]' data-href="https://youtu.be/7XRULIfkufM">
-			作戦会議 @ DOVA-SYNDROME
-		</label>
-		
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["DOVA-SYNDROME", "ある冬の寒い夜に"]' data-href="https://youtu.be/H2TyQW7d2XA">
-			ある冬の寒い夜に @ DOVA-SYNDROME
-		</label>
-		
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["DOVA-SYNDROME", "しゅわしゅわハニーレモン350ml"]' data-href="https://youtu.be/_ckjL0KrmWE">
-			しゅわしゅわハニーレモン350ml @ DOVA-SYNDROME
-		</label>
-		
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["DOVA-SYNDROME", "パステルハウス"]' data-href="https://youtu.be/4pqJA7aiVJc">
-			パステルハウス @ DOVA-SYNDROME
-		</label>
-		
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["DOVA-SYNDROME", "少年達の夏休み的なBGM"]' data-href="https://youtu.be/daKcU7mjNOQ">
-			少年達の夏休み的なBGM
-		</label>
-		
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["musmus", "ひとやすみ"]' data-href="https://musmus.main.jp/">
-			ひとやすみ @ musmus
-		</label>
-		
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["musmus", "吸血鬼は電気仕掛けの少女に恋をする"]' data-href="https://musmus.main.jp/">
-			吸血鬼は電気仕掛けの少女に恋をする @ musmus
-		</label>
-		
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["Youtube Audio Library", "Splashing Around"]' data-href="https://www.youtube.com/channel/UCjDvILf3SYIuBrHv7QojfqA">
-			Splashing Around @ Youtube Audio Library
-		</label>
-
-		<script>
-			document.querySelectorAll('#genre_background_music label>input.control_panels').item(0)
-			.addEventListener(
-				'click', (e1)=>{
-					document.querySelectorAll('#genre_background_music label>input:not(.control_panels)')
-					.forEach((e2)=>{
-						e2.checked=e1.target.checked;
-					});
-				}, false
-			);
-		</script>
-	</div>
-	<div id="genre_niconi_commons">
-		<h2>▼ニコニ・コモンズ</h2>
-		<label><input type="checkbox" name="" class="control_panels">全選択</label>
-
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["nc269995", "ガッkoya"]' data-href="https://commons.nicovideo.jp/works/nc269995">
-			nc269995 / ガッkoya 様
-		</label>
-		
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["nc277703", "Tanusuke"]' data-href="https://commons.nicovideo.jp/works/nc277703">
-			nc277703 / Tanusuke 様
-		</label>
-		
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["nc295951", "みんちり"]' data-href="https://commons.nicovideo.jp/works/nc295951">
-			nc295951 / みんちり 様
-		</label>
-		
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["nc273627", "AiM 素材置場02"]' data-href="https://commons.nicovideo.jp/works/nc273627">
-			nc273627 / AiM 素材置場02 様
-		</label>
-		
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["nc315225", "ｍあ"]' data-href="https://commons.nicovideo.jp/works/nc315225">
-			nc315225 / ｍあ 様
-		</label>
-
-		<script>
-			document.querySelectorAll('#genre_niconi_commons label>input.control_panels').item(0)
-			.addEventListener(
-				'click', (e1)=>{
-					document.querySelectorAll('#genre_niconi_commons label>input:not(.control_panels)')
-					.forEach((e2)=>{
-						e2.checked=e1.target.checked;
-					});
-				}, false
-			);
-		</script>
-	</div>
-	<div id="genre_background_image">
-		<h2>▼背景</h2>
-		<label><input type="checkbox" name="" class="control_panels">全選択</label>
-
-		<script>
-			document.querySelectorAll('#genre_background_image label>input.control_panels').item(0)
-			.addEventListener(
-				'click', (e1)=>{
-					document.querySelectorAll('#genre_background_image label>input:not(.control_panels)')
-					.forEach((e2)=>{
-						e2.checked=e1.target.checked;
-					});
-				}, false
-			);
-		</script>
-	</div>
-	<div id="genre_other">
-		<h2>▼その他（敬称省略）</h2>
-		<label><input type="checkbox" name="" class="control_panels">全選択</label>
-
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["icooon-mono"]' data-href="https://icooon-mono.com/">
-			icooon-mono
-		</label>
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["いらすとや"]' data-href="https://www.irasutoya.com/">
-			いらすとや
-		</label>
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["効果音ラボ"]' data-href="https://soundeffect-lab.info/">
-			効果音ラボ
-		</label>
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["イラストAC"]' data-href="https://www.ac-illust.com/">
-			イラストAC
-		</label>
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["動画AC"]' data-href="https://video-ac.com/">
-			動画AC
-		</label>
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["写真AC"]' data-href="https://www.photo-ac.com/">
-			写真AC
-		</label>
-
-		<script>
-			document.querySelectorAll('#genre_other label>input.control_panels').item(0)
-			.addEventListener(
-				'click', (e1)=>{
-					document.querySelectorAll('#genre_other label>input:not(.control_panels)')
-					.forEach((e2)=>{
-						e2.checked=e1.target.checked;
-					});
-				}, false
-			);
-		</script>
-	</div>
-	<div id="genre_editedby">
-		<h2>▼編集</h2>
-		<label><input type="checkbox" name="" class="control_panels">全選択</label>
-
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["AviUtl"]' data-href="https://spring-fragrance.mints.ne.jp/aviutl/">
-			AviUtl
-		</label>
-
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='["PSDToolKit"]' data-href="https://oov.github.io/aviutl_psdtoolkit/index.html">
-			PSDToolKit
-		</label>
-
-		<script>
-			document.querySelectorAll('#genre_editedby label>input.control_panels').item(0)
-			.addEventListener(
-				'click', (e1)=>{
-					document.querySelectorAll('#genre_editedby label>input:not(.control_panels)')
-					.forEach((e2)=>{
-						e2.checked=e1.target.checked;
-					});
-				}, false
-			);
-		</script>
-	</div>
-	<div id="genre_quotes">
-		<h2>▼出典</h2>
-		<label><input type="checkbox" name="" class="control_panels">全選択</label>
-
-		<script>
-			document.querySelectorAll('#genre_quotes label>input.control_panels').item(0)
-			.addEventListener(
-				'click', (e1)=>{
-					document.querySelectorAll('#genre_quotes label>input:not(.control_panels)')
-					.forEach((e2)=>{
-						e2.checked=e1.target.checked;
-					});
-				}, false
-			);
-		</script>
-	</div>
-	<div id="genre_special_thunks">
-		<h2>▼スペシャルサンクス</h2>
-		<label><input type="checkbox" name="" class="control_panels">全選択</label>
-
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='[""]' data-href="">
-			視聴者のみなさん
-		</label>
-
-		<script>
-			document.querySelectorAll('#genre_special_thunks label>input.control_panels').item(0)
-			.addEventListener(
-				'click', (e1)=>{
-					document.querySelectorAll('#genre_special_thunks label>input:not(.control_panels)')
-					.forEach((e2)=>{
-						e2.checked=e1.target.checked;
-					});
-				}, false
-			);
-		</script>
-	</div>
-	<div id="genre_sns_twitter">
-		<h2>▼X(Twitter)</h2>
-		<label><input type="checkbox" name="" class="control_panels">全選択</label>
-
-		<label class="inlineobj_line">
-			<input type="checkbox" name="" data-hashtag='[""]' data-href="https://x.com/yu_n138_lol1">
-			https://x.com/yu_n138_lol1
-		</label>
-
-		<script>
-			document.querySelectorAll('#genre_sns_twitter label>input.control_panels').item(0)
-			.addEventListener(
-				'click', (e1)=>{
-					document.querySelectorAll('#genre_sns_twitter label>input:not(.control_panels)')
-					.forEach((e2)=>{
-						e2.checked=e1.target.checked;
-					});
-				}, false
-			);
-		</script>
-	</div>
-	<div id="output_multiline">
-=====ここから上に説明分を挿入=====
-▲▼△▽お借りした素材▽△▼▲
+	<div class="non_control_panels">
+		<div id="genre_plaied_game">
+			<h2>▼ゲーム</h2>
+			<label><input type="checkbox" name="" class="control_panels">全選択</label>
+	
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["原神","Genshin Impact","Genshin","mihoyo", "hoyoverse"]' data-href="https://genshin.hoyoverse.com/ja">
+				原神 -Genshin Impact-
+			</label>
+	
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["雀魂","じゃんたま"]' data-href="https://game.mahjongsoul.com/index.html">
+				雀魂 -じゃんたま-
+			</label>
+	
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["JR EAST Train Simulator", "Train Simulator", "Simulator", "JR EAST", "JR東日本", "JR東日本トレインシミュレーター", "JR東日本トレインシミュレータ"]' data-href="https://store.steampowered.com/app/2111630/JR/">
+				JR EAST Train Simulator
+			</label>
+	
+			<script>
+				document.querySelectorAll('#genre_plaied_game label>input.control_panels').item(0)
+				.addEventListener(
+					'click', (e1)=>{
+						document.querySelectorAll('#genre_plaied_game label>input:not(.control_panels)')
+						.forEach((e2)=>{
+							e2.checked=e1.target.checked;
+						});
+					}, false
+				);
+			</script>
+		</div>
+		<div id="genre_standing_picture">
+			<h2>▼立ち絵</h2>
+			<label><input type="checkbox" name="" class="control_panels">全選択</label>
+	
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["ミリアル", "ふにちか", "im10766745"]' data-href="https://seiga.nicovideo.jp/seiga/im10766745">
+				ミリアル / im10766745 / ふにちか 様
+			</label>
+			
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["アベルーニ", "針無シ", "im10785533"]' data-href="https://seiga.nicovideo.jp/seiga/im10785533">
+				アベルーニ / im10785533 / 針無シ 様
+			</label>
+			
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["ずんだもん", "坂本アヒル", "im10788496"]' data-href="https://seiga.nicovideo.jp/seiga/im10788496">
+				ずんだもん / im10788496 / 坂本アヒル 様
+			</label>
+			
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["ずんだもん", "坂本アヒル", "im11148236"]' data-href="https://seiga.nicovideo.jp/seiga/im11148236">
+				ずんだもん / im11148236 / 坂本アヒル 様
+			</label>
+			
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["ずんだもん", "坂本アヒル", "im11206626"]' data-href="https://seiga.nicovideo.jp/seiga/im11206626">
+				ずんだもん / im11206626 / 坂本アヒル 様
+			</label>
+	
+			<script>
+				document.querySelectorAll('#genre_standing_picture label>input.control_panels').item(0)
+				.addEventListener(
+					'click', (e1)=>{
+						document.querySelectorAll('#genre_standing_picture label>input:not(.control_panels)')
+						.forEach((e2)=>{
+							e2.checked=e1.target.checked;
+						});
+					}, false
+				);
+			</script>
+		</div>
+		<div id="genre_voice">
+			<h2>▼こえ</h2>
+			<label><input type="checkbox" name="" class="control_panels">全選択</label>
+	
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["voiceroid", "ミリアル", "Coefont"]' data-href="https://coefont.cloud/">
+				Coefont：ミリアル Voiced by CoeFont.CLOUD
+			</label>
+			
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["voiceroid", "アベルーニ", "Coefont"]' data-href="https://coefont.cloud/">
+				Coefont：アベルーニ Voiced by CoeFont.CLOUD
+			</label>
+			
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["voiceroid", "ずんだもん", "VOICEVOX", "VOICE VOX"]' data-href="https://voicevox.hiroshiba.jp">
+				VOICE VOX：ずんだもん
+			</label>
+			
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["voiceroid", "中国うさぎ", "VOICEVOX", "VOICE VOX"]' data-href="https://voicevox.hiroshiba.jp">
+				VOICE VOX：中国うさぎ
+			</label>
+			
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["voiceroid", "東北きりたん", "AHS", "voiceroid+"]' data-href="https://www.ah-soft.com/voiceroid/kiritan/">
+				AHS：東北きりたん
+			</label>
+			
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["voiceroid", "紲星 あかり", "A.I.VOICE", "A.I.VOICE2", "A.I.VOICE 2"]' data-href="https://aivoice.jp/product/akari/">
+				A.I.VOICE2：紲星 あかり
+			</label>
+			
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["voiceroid", "琴葉 茜・葵", "琴葉 茜", "琴葉 葵", "A.I.VOICE"]' data-href="https://aivoice.jp/product/kotonoha/">
+				A.I.VOICE：琴葉 茜・葵
+			</label>
+	
+			<script>
+				document.querySelectorAll('#genre_voice label>input.control_panels').item(0)
+				.addEventListener(
+					'click', (e1)=>{
+						document.querySelectorAll('#genre_voice label>input:not(.control_panels)')
+						.forEach((e2)=>{
+							e2.checked=e1.target.checked;
+						});
+					}, false
+				);
+			</script>
+		</div>
+		<div id="genre_font">
+			<h2>▼フォント</h2>
+			<label><input type="checkbox" name="" class="control_panels">全選択</label>
+	
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["うずらフォント"]' data-href="https://fontfree.me/1248">
+				うずらフォント
+			</label>
+			
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["あずきフォント"]' data-href="http://azukifont.com/font/azuki.html">
+				あずきフォント
+			</label>
+			
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["Myrica", "プログラミングフォント"]' data-href="https://myrica.estable.jp/">
+				プログラミングフォント Myrica
+			</label>
+			
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["851テガキカクット"]' data-href="https://pm85122.onamae.jp/851H_kktt.html">
+				851テガキカクット
+			</label>
+			
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["MS UI Gothic"]' data-href="https://learn.microsoft.com/ja-jp/typography/font-list/ms-ui-gothic">
+				MS UI Gothic
+			</label>
+	
+			<script>
+				document.querySelectorAll('#genre_font label>input.control_panels').item(0)
+				.addEventListener(
+					'click', (e1)=>{
+						document.querySelectorAll('#genre_font label>input:not(.control_panels)')
+						.forEach((e2)=>{
+							e2.checked=e1.target.checked;
+						});
+					}, false
+				);
+			</script>
+		</div>
+		<div id="genre_background_music">
+			<h2>▼BGM</h2>
+			<label><input type="checkbox" name="" class="control_panels">全選択</label>
+	
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["DOVA-SYNDROME", "SUMMER TRIANGLE"]' data-href="https://youtu.be/SkQihFHiWt0">
+				SUMMER TRIANGLE @ DOVA-SYNDROME
+			</label>
+			
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["DOVA-SYNDROME", "bosquet"]' data-href="https://youtu.be/57Eap6g6uZ8">
+				bosquet @ DOVA-SYNDROME
+			</label>
+			
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["DOVA-SYNDROME", "2:23 AM"]' data-href="https://youtu.be/16Bj6aPi1A8">
+				2:23 AM @ DOVA-SYNDROME
+			</label>
+			
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["DOVA-SYNDROME", "奇妙な案内人"]' data-href="https://youtu.be/TxkWXdjkMeA">
+				奇妙な案内人 @ DOVA-SYNDROME
+			</label>
+			
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["DOVA-SYNDROME", "Gentle"]' data-href="https://youtu.be/WFlGnDrGsF0">
+				Gentle @ DOVA-SYNDROME
+			</label>
+			
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["DOVA-SYNDROME", "Pappa Parappa"]' data-href="https://youtu.be/vl4FzBh-8RA">
+				Pappa Parappa @ DOVA-SYNDROME
+			</label>
+			
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["DOVA-SYNDROME", "How to Cook"]' data-href="https://youtu.be/ma8Sj8CKEpQ">
+				How to Cook @ DOVA-SYNDROME
+			</label>
+			
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["DOVA-SYNDROME", "轍は続くよどこまでも的なBGM"]' data-href="https://youtu.be/jo5Fhr9CZzU">
+				轍は続くよどこまでも的なBGM @ DOVA-SYNDROME
+			</label>
+			
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["DOVA-SYNDROME", "Cefiro"]' data-href="https://youtu.be/qyWBdYJaRLY">
+				Cefiro @ DOVA-SYNDROME
+			</label>
+			
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["DOVA-SYNDROME", "追いかけっこキャッハー"]' data-href="https://youtu.be/TArfBA0Ywxo">
+				追いかけっこキャッハー @ DOVA-SYNDROME
+			</label>
+			
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["DOVA-SYNDROME", "shuffle shuffle"]' data-href="https://youtu.be/kNrOgRb_two">
+				shuffle shuffle @ DOVA-SYNDROME
+			</label>
+			
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["DOVA-SYNDROME", "10℃"]' data-href="https://youtu.be/pgjwcEpjhKE">
+				10℃ @ DOVA-SYNDROME
+			</label>
+			
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["DOVA-SYNDROME", "eye-catch"]' data-href="https://youtu.be/96SxE_fhJm8">
+				eye-catch @ DOVA-SYNDROME
+			</label>
+			
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["DOVA-SYNDROME", "作戦会議"]' data-href="https://youtu.be/7XRULIfkufM">
+				作戦会議 @ DOVA-SYNDROME
+			</label>
+			
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["DOVA-SYNDROME", "ある冬の寒い夜に"]' data-href="https://youtu.be/H2TyQW7d2XA">
+				ある冬の寒い夜に @ DOVA-SYNDROME
+			</label>
+			
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["DOVA-SYNDROME", "しゅわしゅわハニーレモン350ml"]' data-href="https://youtu.be/_ckjL0KrmWE">
+				しゅわしゅわハニーレモン350ml @ DOVA-SYNDROME
+			</label>
+			
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["DOVA-SYNDROME", "パステルハウス"]' data-href="https://youtu.be/4pqJA7aiVJc">
+				パステルハウス @ DOVA-SYNDROME
+			</label>
+			
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["DOVA-SYNDROME", "少年達の夏休み的なBGM"]' data-href="https://youtu.be/daKcU7mjNOQ">
+				少年達の夏休み的なBGM
+			</label>
+			
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["musmus", "ひとやすみ"]' data-href="https://musmus.main.jp/">
+				ひとやすみ @ musmus
+			</label>
+			
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["musmus", "吸血鬼は電気仕掛けの少女に恋をする"]' data-href="https://musmus.main.jp/">
+				吸血鬼は電気仕掛けの少女に恋をする @ musmus
+			</label>
+			
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["Youtube Audio Library", "Splashing Around"]' data-href="https://www.youtube.com/channel/UCjDvILf3SYIuBrHv7QojfqA">
+				Splashing Around @ Youtube Audio Library
+			</label>
+	
+			<script>
+				document.querySelectorAll('#genre_background_music label>input.control_panels').item(0)
+				.addEventListener(
+					'click', (e1)=>{
+						document.querySelectorAll('#genre_background_music label>input:not(.control_panels)')
+						.forEach((e2)=>{
+							e2.checked=e1.target.checked;
+						});
+					}, false
+				);
+			</script>
+		</div>
+		<div id="genre_niconi_commons">
+			<h2>▼ニコニ・コモンズ</h2>
+			<label><input type="checkbox" name="" class="control_panels">全選択</label>
+	
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["nc269995", "ガッkoya"]' data-href="https://commons.nicovideo.jp/works/nc269995">
+				nc269995 / ガッkoya 様
+			</label>
+			
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["nc277703", "Tanusuke"]' data-href="https://commons.nicovideo.jp/works/nc277703">
+				nc277703 / Tanusuke 様
+			</label>
+			
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["nc295951", "みんちり"]' data-href="https://commons.nicovideo.jp/works/nc295951">
+				nc295951 / みんちり 様
+			</label>
+			
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["nc273627", "AiM 素材置場02"]' data-href="https://commons.nicovideo.jp/works/nc273627">
+				nc273627 / AiM 素材置場02 様
+			</label>
+			
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["nc315225", "ｍあ"]' data-href="https://commons.nicovideo.jp/works/nc315225">
+				nc315225 / ｍあ 様
+			</label>
+	
+			<script>
+				document.querySelectorAll('#genre_niconi_commons label>input.control_panels').item(0)
+				.addEventListener(
+					'click', (e1)=>{
+						document.querySelectorAll('#genre_niconi_commons label>input:not(.control_panels)')
+						.forEach((e2)=>{
+							e2.checked=e1.target.checked;
+						});
+					}, false
+				);
+			</script>
+		</div>
+		<div id="genre_background_image">
+			<h2>▼背景</h2>
+			<label><input type="checkbox" name="" class="control_panels">全選択</label>
+	
+			<script>
+				document.querySelectorAll('#genre_background_image label>input.control_panels').item(0)
+				.addEventListener(
+					'click', (e1)=>{
+						document.querySelectorAll('#genre_background_image label>input:not(.control_panels)')
+						.forEach((e2)=>{
+							e2.checked=e1.target.checked;
+						});
+					}, false
+				);
+			</script>
+		</div>
+		<div id="genre_other">
+			<h2>▼その他（敬称省略）</h2>
+			<label><input type="checkbox" name="" class="control_panels">全選択</label>
+	
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["icooon-mono"]' data-href="https://icooon-mono.com/">
+				icooon-mono
+			</label>
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["いらすとや"]' data-href="https://www.irasutoya.com/">
+				いらすとや
+			</label>
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["効果音ラボ"]' data-href="https://soundeffect-lab.info/">
+				効果音ラボ
+			</label>
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["イラストAC"]' data-href="https://www.ac-illust.com/">
+				イラストAC
+			</label>
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["動画AC"]' data-href="https://video-ac.com/">
+				動画AC
+			</label>
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["写真AC"]' data-href="https://www.photo-ac.com/">
+				写真AC
+			</label>
+	
+			<script>
+				document.querySelectorAll('#genre_other label>input.control_panels').item(0)
+				.addEventListener(
+					'click', (e1)=>{
+						document.querySelectorAll('#genre_other label>input:not(.control_panels)')
+						.forEach((e2)=>{
+							e2.checked=e1.target.checked;
+						});
+					}, false
+				);
+			</script>
+		</div>
+		<div id="genre_editedby">
+			<h2>▼編集</h2>
+			<label><input type="checkbox" name="" class="control_panels">全選択</label>
+	
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["AviUtl"]' data-href="https://spring-fragrance.mints.ne.jp/aviutl/">
+				AviUtl
+			</label>
+	
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='["PSDToolKit"]' data-href="https://oov.github.io/aviutl_psdtoolkit/index.html">
+				PSDToolKit
+			</label>
+	
+			<script>
+				document.querySelectorAll('#genre_editedby label>input.control_panels').item(0)
+				.addEventListener(
+					'click', (e1)=>{
+						document.querySelectorAll('#genre_editedby label>input:not(.control_panels)')
+						.forEach((e2)=>{
+							e2.checked=e1.target.checked;
+						});
+					}, false
+				);
+			</script>
+		</div>
+		<div id="genre_quotes">
+			<h2>▼出典</h2>
+			<label><input type="checkbox" name="" class="control_panels">全選択</label>
+	
+			<script>
+				document.querySelectorAll('#genre_quotes label>input.control_panels').item(0)
+				.addEventListener(
+					'click', (e1)=>{
+						document.querySelectorAll('#genre_quotes label>input:not(.control_panels)')
+						.forEach((e2)=>{
+							e2.checked=e1.target.checked;
+						});
+					}, false
+				);
+			</script>
+		</div>
+		<div id="genre_special_thunks">
+			<h2>▼スペシャルサンクス</h2>
+			<label><input type="checkbox" name="" class="control_panels">全選択</label>
+	
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='[""]' data-href="">
+				視聴者のみなさん
+			</label>
+	
+			<script>
+				document.querySelectorAll('#genre_special_thunks label>input.control_panels').item(0)
+				.addEventListener(
+					'click', (e1)=>{
+						document.querySelectorAll('#genre_special_thunks label>input:not(.control_panels)')
+						.forEach((e2)=>{
+							e2.checked=e1.target.checked;
+						});
+					}, false
+				);
+			</script>
+		</div>
+		<div id="genre_sns_twitter">
+			<h2>▼X(Twitter)</h2>
+			<label><input type="checkbox" name="" class="control_panels">全選択</label>
+	
+			<label class="inlineobj_line">
+				<input type="checkbox" name="" data-hashtag='[""]' data-href="https://x.com/yu_n138_lol1">
+				https://x.com/yu_n138_lol1
+			</label>
+	
+			<script>
+				document.querySelectorAll('#genre_sns_twitter label>input.control_panels').item(0)
+				.addEventListener(
+					'click', (e1)=>{
+						document.querySelectorAll('#genre_sns_twitter label>input:not(.control_panels)')
+						.forEach((e2)=>{
+							e2.checked=e1.target.checked;
+						});
+					}, false
+				);
+			</script>
+		</div>
+		<div id="output_multiline">
+	=====ここから上に説明分を挿入=====
+	▲▼△▽お借りした素材▽△▼▲
+		</div>
 	</div>
 </body>
 </html>
