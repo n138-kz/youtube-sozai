@@ -204,6 +204,8 @@
 	</div>
 	<div id="genre_background_music">
 		<h2>▼BGM</h2>
+		<label><input type="checkbox" name="" class="control_panels">全選択</label>
+
 		<label class="inlineobj_line">
 			<input type="checkbox" name="" data-hashtag='["DOVA-SYNDROME", "SUMMER TRIANGLE"]' data-href="https://youtu.be/SkQihFHiWt0">
 			SUMMER TRIANGLE @ DOVA-SYNDROME
@@ -308,6 +310,18 @@
 			<input type="checkbox" name="" data-hashtag='["Youtube Audio Library", "Splashing Around"]' data-href="https://www.youtube.com/channel/UCjDvILf3SYIuBrHv7QojfqA">
 			Splashing Around @ Youtube Audio Library
 		</label>
+
+		<script>
+			document.querySelectorAll('#genre_background_music label>input.control_panels').item(0)
+			.addEventListener(
+				'click', (e1)=>{
+					document.querySelectorAll('#genre_background_music label>input:not(.control_panels)')
+					.forEach((e2)=>{
+						e2.checked=e1.target.checked;
+					});
+				}, false
+			);
+		</script>
 	</div>
 	<div id="genre_niconi_commons">
 		<h2>▼ニコニ・コモンズ</h2>
