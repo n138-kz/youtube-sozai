@@ -223,6 +223,14 @@
 				}
 			});
 
+			e2=output_multiline_description.value.replace(/(\r\n|\r)/, '\n').trim().split(/\n/).length;
+			if (e2>5) {
+				console.log(output_multiline_description.style.height);
+				e2 = e2>50 ? 50 : e2;
+				if (output_multiline_description.style.height.length==0 || parseInt(output_multiline_description.style.height) < e2) {
+					output_multiline_description.style.height=e2+'em';
+				}
+			};
 
 			for (let i999 = 0; i999 < 10; i999++) {
 				output_multiline_description.value+='\n';
