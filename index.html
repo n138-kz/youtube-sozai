@@ -89,6 +89,18 @@
 			return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
 		}
 	</script>
+	<script defer>
+		function changedConfig() {
+			console.log('changedConfig');
+			
+		}
+		window.addEventListener('DOMContentLoaded', (e1)=>{
+			document.querySelectorAll('input[type=checkbox]')
+			.forEach((e2)=>{
+				e2.addEventListener('click', changedConfig, false);
+			});
+		}, false);
+	</script>
 </head>
 <body>
 	<a name="top"></a>
