@@ -71,6 +71,8 @@
 	</div>
 	<div id="genre_standing_picture">
 		<h2>▼立ち絵</h2>
+		<label><input type="checkbox" name="" class="control_panels">全選択</label>
+
 		<label class="inlineobj_line">
 			<input type="checkbox" name="" data-hashtag='["ミリアル", "ふにちか", "im10766745"]' data-href="https://seiga.nicovideo.jp/seiga/im10766745">
 			ミリアル / im10766745 / ふにちか 様
@@ -95,6 +97,18 @@
 			<input type="checkbox" name="" data-hashtag='["ずんだもん", "坂本アヒル", "im11206626"]' data-href="https://seiga.nicovideo.jp/seiga/im11206626">
 			ずんだもん / im11206626 / 坂本アヒル 様
 		</label>
+
+		<script>
+			document.querySelectorAll('#genre_standing_picture label>input.control_panels').item(0)
+			.addEventListener(
+				'click', (e1)=>{
+					document.querySelectorAll('#genre_standing_picture label>input:not(.control_panels)')
+					.forEach((e2)=>{
+						e2.checked=e1.target.checked;
+					});
+				}, false
+			);
+		</script>
 	</div>
 	<div id="genre_voice">
 		<h2>▼こえ</h2>
