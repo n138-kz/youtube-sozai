@@ -163,6 +163,8 @@
 	</div>
 	<div id="genre_font">
 		<h2>▼フォント</h2>
+		<label><input type="checkbox" name="" class="control_panels">全選択</label>
+
 		<label class="inlineobj_line">
 			<input type="checkbox" name="" data-hashtag='["うずらフォント"]' data-href="https://fontfree.me/1248">
 			うずらフォント
@@ -187,6 +189,18 @@
 			<input type="checkbox" name="" data-hashtag='["MS UI Gothic"]' data-href="https://learn.microsoft.com/ja-jp/typography/font-list/ms-ui-gothic">
 			MS UI Gothic
 		</label>
+
+		<script>
+			document.querySelectorAll('#genre_font label>input.control_panels').item(0)
+			.addEventListener(
+				'click', (e1)=>{
+					document.querySelectorAll('#genre_font label>input:not(.control_panels)')
+					.forEach((e2)=>{
+						e2.checked=e1.target.checked;
+					});
+				}, false
+			);
+		</script>
 	</div>
 	<div id="genre_background_music">
 		<h2>▼BGM</h2>
