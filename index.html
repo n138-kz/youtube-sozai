@@ -108,7 +108,7 @@
 	</script>
 	<script defer>
 		function changedConfig() {
-			console.log('changedConfig');
+			console.debug('changedConfig');
 			/*
 			 * - 初期化処理
 			 * - "ゲーム" セクション内で選択されているものが存在しているか。
@@ -189,9 +189,11 @@
 			output_multiline_metaTag.value='';
 
 			document.querySelectorAll('h2').forEach((e2)=>{
-				console.log(e2.parentNode.id);
+				console.debug(e2.parentNode.id);
 				e2=e2.parentNode.id
+				console.debug(`#${e2} label>input:not(.control_panels):checked`);
 				e2=document.querySelectorAll(`#${e2} label>input:not(.control_panels):checked`);
+				console.debug(e2);
 				if ( e2.length > 0 ) {
 					console.debug(e2.item(0).parentNode.parentNode.children);
 
@@ -199,6 +201,7 @@
 					.forEach((e3)=>{
 						if (e3.tagName=='H2') {
 							output_multiline_description.value+=e3.innerText+'\n';
+							console.debug(e3.innerText);
 						} else {
 							return;
 						}
@@ -241,7 +244,7 @@
 		<script defer>
 			window.addEventListener('DOMContentLoaded', (e1)=>{
 				document.querySelectorAll('h2').forEach((e2)=>{
-					console.log(e2.innerText);
+					console.debug(e2.innerText);
 					var a_tag_linkto=document.createElement('a');
 					var a_tag_linkto_namestr='';
 					for (let i999 = 0; a_tag_linkto_namestr.length < 16; i999++) {
