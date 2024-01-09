@@ -144,9 +144,9 @@
 						output_multiline_description.value+='　'+e3.dataset.href+'\n';
 						output_multiline_description.value+='\n';
 						JSON.parse(e3.dataset.hashtag).forEach((e4)=>{
+							console.debug(e4);
 							output_multiline_hashTag.value+='#'+e4.replace(/ /g, '_').replace(/-/g, '_').replace(/_-/g, '_').replace(/_+/g, '_').replace(/_$/g, '')+'\n';
 							output_multiline_metaTag.value+=e4+','+'\n';
-							console.debug(e4);
 						});
 					});
 
