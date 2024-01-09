@@ -145,7 +145,6 @@
 						output_multiline_description.value+='\n';
 						JSON.parse(e3.dataset.hashtag).forEach((e4)=>{
 							console.debug(e4);
-							output_multiline_hashTag.value+='#'+e4.replace(/ /g, '_').replace(/-/g, '_').replace(/_-/g, '_').replace(/_+/g, '_').replace(/_$/g, '')+'\n';
 							output_multiline_metaTag.value+=e4+','+'\n';
 						});
 					});
@@ -166,6 +165,21 @@
 			for (let i999 = 0; i999 < 10; i999++) {
 				output_multiline_description.value+='\n';
 			}
+
+			e2=output_multiline_metaTag.value;
+			e2=e2.split(',\n');
+			e2=e2.sort();
+			e2=e2.filter((e2_e, e2_i) => {
+				return e2.indexOf(e2_e) == e2_i;
+			});
+			e2=e2.join('\n').trim();
+			e2=e2.split(',\n');
+			e2=e2.join(',\n').trim();
+			e2=e2.split('\n');
+			console.log(e2);
+			e2.forEach((e3)=>{
+				output_multiline_hashTag.value+='#'+e3.replace(/ /g, '_').replace(/-/g, '_').replace(/_-/g, '_').replace(/_+/g, '_').replace(/_$/g, '')+'\n';
+			});
 			output_multiline_description.value+=output_multiline_hashTag.value+'\n';
 		}
 		window.addEventListener('DOMContentLoaded', (e1)=>{
