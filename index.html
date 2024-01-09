@@ -178,9 +178,13 @@
 			e2=e2.split('\n');
 			console.debug(e2);
 			e2.forEach((e3)=>{
+				if (e3.length==0) {
+					return
+				}
 				output_multiline_hashTag.value+='#'+e3.replace(/ /g, '_').replace(/-/g, '_').replace(/_-/g, '_').replace(/_+/g, '_').replace(/_$/g, '')+'\n';
 			});
 			output_multiline_description.value+=output_multiline_hashTag.value+'\n';
+			output_multiline_description.value=output_multiline_description.value.trim();
 		}
 		window.addEventListener('DOMContentLoaded', (e1)=>{
 			document.querySelectorAll('input[type=checkbox]')
