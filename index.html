@@ -155,7 +155,7 @@
 
 			e2=output_multiline_description.value.replace(/(\r\n|\r)/, '\n').trim().split(/\n/).length;
 			if (e2>5) {
-				console.log(output_multiline_description.style.height);
+				console.debug(output_multiline_description.style.height);
 				e2 = e2>50 ? 50 : e2;
 				if (output_multiline_description.style.height.length==0 || parseInt(output_multiline_description.style.height) < e2) {
 					output_multiline_description.style.height=e2+'em';
@@ -176,7 +176,7 @@
 			e2=e2.split(',\n');
 			e2=e2.join(',\n').trim();
 			e2=e2.split('\n');
-			console.log(e2);
+			console.debug(e2);
 			e2.forEach((e3)=>{
 				output_multiline_hashTag.value+='#'+e3.replace(/ /g, '_').replace(/-/g, '_').replace(/_-/g, '_').replace(/_+/g, '_').replace(/_$/g, '')+'\n';
 			});
@@ -192,7 +192,7 @@
 	<script>
 		window.addEventListener('DOMContentLoaded', (e1)=>{
 			document.querySelectorAll('textarea').forEach((e2)=>{
-				console.log(e2);
+				console.debug(e2);
 				e2.addEventListener(
 					'click', (e3)=>{
 						e3.target.select();
@@ -204,7 +204,7 @@
 	<script>
 		window.addEventListener('DOMContentLoaded', (e1)=>{
 			document.querySelectorAll('#output_multiline_meta-tag').forEach((e2)=>{
-				console.log(e2);
+				console.debug(e2);
 				e2.addEventListener(
 					'click', (e3)=>{
 						e4=e3.target.value;
@@ -215,7 +215,7 @@
 						});
 						e4=e4.join('\n');
 						e4=e4.trim();
-						console.log(e4);
+						console.debug(e4);
 						e3.target.value=e4;
 					}, false
 				)
