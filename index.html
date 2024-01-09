@@ -467,8 +467,6 @@
 		<div id="genre_background_music">
 			<h2>▼BGM</h2>
 			<label><input type="checkbox" name="" class="control_panels">全選択</label>
-			<diiv id="genre_background_music_musmus">
-			</div>
 			<div id="genre_background_music_Youtube-Audio-Library">
 			</div>
 
@@ -568,6 +566,7 @@
 			
 		
 			<h3>musmus</h3>
+			<diiv id="genre_background_music_musmus"></div>
 			<label><input type="checkbox" name="" class="control_panels">全選択</label>
 
 			<label class="inlineobj_line">
@@ -604,15 +603,6 @@
 								e2.checked=false;
 							});
 						}
-					}, false
-				);
-				document.querySelectorAll('#genre_background_music_musmus label>input.control_panels').item(0)
-				.addEventListener(
-					'click', (e1)=>{
-						document.querySelectorAll('#genre_background_music_musmus label>input:not(.control_panels)')
-						.forEach((e2)=>{
-							e2.checked=e1.target.checked;
-						});
 					}, false
 				);
 				document.querySelectorAll('#genre_background_music_Youtube-Audio-Library label>input.control_panels').item(0)
