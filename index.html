@@ -706,8 +706,6 @@
 	
 			<h3>NoCopyrightMusic</h3>
 			<script>
-				console.log(this);
-				console.log(document.querySelectorAll('#genre_background_music').item(0));
 				let contents = [
 					{
 						hashtag: ['NoCopyrightMusic', 'にゃるぱかBGM工房', 'おやつの後は眠くなる'],
@@ -728,12 +726,11 @@
 						instext: '#走り出せ世界 @ にゃるぱかBGM工房(https://www.youtube.com/@NyalpacaBGM)',
 					},
 				];
-				console.log(contents);
+				console.debug(contents);
 				contents.forEach((v,i)=>{
-					console.log([v,i]);
-					console.log(JSON.stringify(v.hashtag));
 					var domContent1=document.createElement('label');
 					domContent1.classList.add('inlineobj_line');
+					
 					var domContent2=document.createElement('input');
 					domContent2.type='checkbox';
 					domContent2.dataset.hashtag=JSON.stringify(v.hashtag);
