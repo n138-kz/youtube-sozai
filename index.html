@@ -705,6 +705,48 @@
 			</label>
 	
 			<h3>NoCopyrightMusic</h3>
+			<script>
+				console.log(this);
+				console.log(document.querySelectorAll('#genre_background_music').item(0));
+				let contents = [
+					{
+						hashtag: ['NoCopyrightMusic', 'にゃるぱかBGM工房', 'おやつの後は眠くなる'],
+						href: 'https://youtu.be/487Xz9y_f6w',
+						context: 'おやつの後は眠くなる @ にゃるぱかBGM工房',
+						instext: '#おやつの後は眠くなる @ にゃるぱかBGM工房(https://www.youtube.com/@NyalpacaBGM)',
+					},
+					{
+						hashtag: ['NoCopyrightMusic', 'にゃるぱかBGM工房', '冬の夜空を見つめて'],
+						href: 'https://youtu.be/fRWj5znHdf0',
+						context: '冬の夜空を見つめて @ にゃるぱかBGM工房',
+						instext: '#冬の夜空を見つめて @ にゃるぱかBGM工房(https://www.youtube.com/@NyalpacaBGM)',
+					},
+					{
+						hashtag: ['NoCopyrightMusic', 'にゃるぱかBGM工房', '走り出せ世界'],
+						href: 'https://youtu.be/JtKEtP1AD5Y',
+						context: '走り出せ世界 @ にゃるぱかBGM工房',
+						instext: '#走り出せ世界 @ にゃるぱかBGM工房(https://www.youtube.com/@NyalpacaBGM)',
+					},
+				];
+				console.log(contents);
+				contents.forEach((v,i)=>{
+					console.log([v,i]);
+					console.log(JSON.stringify(v.hashtag));
+					var domContent1=document.createElement('label');
+					domContent1.classList.add('inlineobj_line');
+					var domContent2=document.createElement('input');
+					domContent2.type='checkbox';
+					domContent2.dataset.hashtag=JSON.stringify(v.hashtag);
+					domContent2.dataset.href=JSON.stringify(v.href);
+					domContent2.dataset.instext=JSON.stringify(v.instext);
+					domContent1.appendChild(domContent2);
+					var domContent2=document.createTextNode(v.context);
+					domContent1.appendChild(domContent2);
+				
+					document.querySelectorAll('#genre_background_music').item(0)
+					.appendChild(domContent1);
+				});
+			</script>
 
 			<script>
 				document.querySelectorAll('#genre_background_music label>input.control_panels').item(0)
