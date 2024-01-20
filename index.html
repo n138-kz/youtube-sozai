@@ -736,25 +736,11 @@
 						instext: 'Raga Legacy @ Youtube Audio Library',
 					},
 				];
-				console.debug(contents);
-				contents.forEach((v,i)=>{
-					var domContent1=document.createElement('label');
-					domContent1.classList.add('inlineobj_line');
-					
-					var hashtag = v.hashtag;
-					hashtag.push('Youtube Audio Library')
-					var domContent2=document.createElement('input');
-					domContent2.type='checkbox';
-					domContent2.dataset.hashtag=JSON.stringify(hashtag);
-					domContent2.dataset.href=JSON.stringify(v.href);
-					domContent2.dataset.instext=JSON.stringify(v.instext);
-					domContent1.appendChild(domContent2);
-					var domContent2=document.createTextNode(v.context);
-					domContent1.appendChild(domContent2);
-				
+				loadobject_and_set(
+					contents, 
+					['Youtube Audio Library'], 
 					document.querySelectorAll('#genre_background_music').item(0)
-					.appendChild(domContent1);
-				});
+				);
 			</script>
 	
 			<h3>NoCopyrightMusic</h3>
