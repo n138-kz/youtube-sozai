@@ -106,6 +106,34 @@
 			max = Math.floor(max);
 			return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
 		}
+		function loadobject_and_set(content, hashtag, appliedTo) {
+			console.log(content, hashtag, appliedTo);
+			/*
+			@args:
+				- content: string[]{}
+				- hashtag: string[]
+				- appliedTo: DOM object
+					document.querySelectorAll('#element').item(0) -> appliedTo
+			*/
+			content.forEach((v,i)=>{
+				var domContent1=document.createElement('label');
+				domContent1.classList.add('inlineobj_line');
+				
+				hashtag.concat(v.hashtag)
+				var domContent2=document.createElement('input');
+				domContent2.type='checkbox';
+				domContent2.checked=v.checked;
+				domContent2.dataset.hashtag=JSON.stringify(hashtag);
+				domContent2.dataset.href=JSON.stringify(v.href);
+				domContent2.dataset.instext=JSON.stringify(v.instext);
+				domContent1.appendChild(domContent2);
+				var domContent2=document.createTextNode(v.context);
+				domContent1.appendChild(domContent2);
+			
+				/* document.querySelectorAll('#element').item(0) -> appliedTo */
+				appliedTo.appendChild(domContent1);
+			});
+		}
 	</script>
 	<script defer>
 		function changedConfig() {
