@@ -794,61 +794,82 @@
 		<div id="genre_niconi_commons">
 			<h2>▼ニコニ・コモンズ</h2>
 			<label><input type="checkbox" name="" class="control_panels">全選択</label>
-	
-			<label class="inlineobj_line">
-				<input type="checkbox" name="" data-hashtag='["nc269995", "ガッkoya"]' data-href="https://commons.nicovideo.jp/works/nc269995" checked>
-				nc269995 / ガッkoya 様
-			</label>
-			
-			<label class="inlineobj_line">
-				<input type="checkbox" name="" data-hashtag='["nc315866", "雫ちゃん"]' data-href="https://commons.nicovideo.jp/works/nc315866">
-				nc315866 / 雫ちゃん 様
-			</label>
-			
-			<label class="inlineobj_line">
-				<input type="checkbox" name="" data-hashtag='["nc277703", "Tanusuke"]' data-href="https://commons.nicovideo.jp/works/nc277703">
-				nc277703 / Tanusuke 様
-			</label>
-			
-			<label class="inlineobj_line">
-				<input type="checkbox" name="" data-hashtag='["nc315225", "ｍあ"]' data-href="https://commons.nicovideo.jp/works/nc315225">
-				nc315225 / ｍあ 様
-			</label>
-			
-			<label class="inlineobj_line">
-				<input type="checkbox" name="" data-hashtag='["nc314080", "神音の社"]' data-href="https://commons.nicovideo.jp/works/nc314080">
-				nc314080 / 神音の社 様
-			</label>
-			
-			<label class="inlineobj_line">
-				<input type="checkbox" name="" data-hashtag='["nc300889", "神音の社"]' data-href="https://commons.nicovideo.jp/works/nc300889">
-				nc300889 / 神音の社 様
-			</label>
-			
-			<label class="inlineobj_line">
-				<input type="checkbox" name="" data-hashtag='["nc295951", "みんちり"]' data-href="https://commons.nicovideo.jp/works/nc295951">
-				nc295951 / みんちり 様
-			</label>
-			
-			<label class="inlineobj_line">
-				<input type="checkbox" name="" data-hashtag='["nc307753", "Studio EMIT"]' data-href="https://commons.nicovideo.jp/works/nc307753">
-				nc307753 / Studio EMIT 様
-			</label>
-			
-			<label class="inlineobj_line">
-				<input type="checkbox" name="" data-hashtag='["nc314314", "Studio EMIT"]' data-href="https://commons.nicovideo.jp/works/nc314314">
-				nc314314 / Studio EMIT 様
-			</label>
-			
-			<label class="inlineobj_line">
-				<input type="checkbox" name="" data-hashtag='["nc209590", "hiropon"]' data-href="https://commons.nicovideo.jp/works/nc209590">
-				nc209590 / hiropon 様
-			</label>
-			
-			<label class="inlineobj_line">
-				<input type="checkbox" name="" data-hashtag='["nc273627", "AiM 素材置場02"]' data-href="https://commons.nicovideo.jp/works/nc273627">
-				nc273627 / AiM 素材置場02 様
-			</label>
+
+			<script>
+				var contents = [
+					{
+						hashtag: ["nc269995", "ガッkoya"],
+						href: 'https://commons.nicovideo.jp/works/nc269995',
+						context: 'nc269995 / ガッkoya 様',
+						instext: 'nc269995 / ガッkoya 様',
+					},
+					{
+						hashtag: ['nc315866', '雫ちゃん'],
+						href: 'https://commons.nicovideo.jp/works/nc315866',
+						context: 'nc315866 / 雫ちゃん 様',
+						instext: 'nc315866 / 雫ちゃん 様',
+					},
+					{
+						hashtag: ['nc277703', 'Tanusuke'],
+						href: 'https://commons.nicovideo.jp/works/nc277703',
+						context: 'nc277703 / Tanusuke 様',
+						instext: 'nc277703 / Tanusuke 様',
+					},
+					{
+						hashtag: ['nc315225', 'ｍあ'],
+						href: 'https://commons.nicovideo.jp/works/nc315225',
+						context: 'nc315225 / ｍあ 様',
+						instext: 'nc315225 / ｍあ 様',
+					},
+					{
+						hashtag: ['nc314080', '神音の社'],
+						href: 'https://commons.nicovideo.jp/works/nc314080',
+						context: 'nc314080 / 神音の社 様',
+						instext: 'nc314080 / 神音の社 様',
+					},
+					{
+						hashtag: ['nc300889', '神音の社'],
+						href: 'https://commons.nicovideo.jp/works/nc300889',
+						context: 'nc300889 / 神音の社 様',
+						instext: 'nc300889 / 神音の社 様',
+					},
+					{
+						hashtag: ['nc295951', 'みんちり'],
+						href: 'https://commons.nicovideo.jp/works/nc295951',
+						context: 'nc295951 / みんちり 様',
+						instext: 'nc295951 / みんちり 様',
+					},
+					{
+						hashtag: ['nc307753', 'Studio EMIT'],
+						href: 'https://commons.nicovideo.jp/works/nc307753',
+						context: 'nc307753 / Studio EMIT 様',
+						instext: 'nc307753 / Studio EMIT 様',
+					},
+					{
+						hashtag: ['nc314314', 'Studio EMIT'],
+						href: 'https://commons.nicovideo.jp/works/nc314314',
+						context: 'nc314314 / Studio EMIT 様',
+						instext: 'nc314314 / Studio EMIT 様',
+					},
+					{
+						hashtag: ['nc209590', 'hiropon'],
+						href: 'https://commons.nicovideo.jp/works/nc209590',
+						context: 'nc209590 / hiropon 様',
+						instext: 'nc209590 / hiropon 様',
+					},
+					{
+						hashtag: ['nc273627', 'AiM 素材置場02'],
+						href: 'https://commons.nicovideo.jp/works/nc273627',
+						context: 'nc273627 / AiM 素材置場02 様',
+						instext: 'nc273627 / AiM 素材置場02 様',
+					},
+				];
+				loadobject_and_set(
+					contents, 
+					[], 
+					document.querySelectorAll('#genre_niconi_commons').item(0)
+				);
+			</script>
 	
 			<script>
 				document.querySelectorAll('#genre_niconi_commons label>input.control_panels').item(0)
