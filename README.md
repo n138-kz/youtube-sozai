@@ -5,6 +5,7 @@
 ## License
 
 [![License MIT](https://upload.wikimedia.org/wikipedia/commons/0/0c/MIT_logo.svg)](LICENSE)
+[MIT_License | wikipedia](https://ja.wikipedia.org/wiki/MIT_License)
 
 [n138-kz/YoutubeChannel-DescriptionMaker_UCOX8Iv1r0V18lbOnohE7lWQ](./) is licensed under the `MIT License`.  
 A short and simple permissive license with conditions only requiring preservation of copyright and license notices.  
