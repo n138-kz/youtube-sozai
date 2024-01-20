@@ -5,3 +5,17 @@
 ## License
 
 [![License MIT](https://upload.wikimedia.org/wikipedia/commons/0/0c/MIT_logo.svg)](LICENSE)
+
+n138-kz/YoutubeChannel-DescriptionMaker_UCOX8Iv1r0V18lbOnohE7lWQ is licensed under the `MIT License`.  
+A short and simple permissive license with conditions only requiring preservation of copyright and license notices.  
+Licensed works, modifications, and larger works may be distributed under different terms and without source code.  
+
+### Permissions / 許可
+- Commercial use / 
+- Modification / 商用利用
+- Distribution / 改変&再配布
+- Private use / 私的使用 
+
+### Limitations / 制限事項
+- Liability / 責任
+- Warranty / 保証
