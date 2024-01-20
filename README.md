@@ -11,9 +11,9 @@ A short and simple permissive license with conditions only requiring preservatio
 Licensed works, modifications, and larger works may be distributed under different terms and without source code.  
 
 ### Permissions / 許可
-- Commercial use / 
-- Modification / 商用利用
-- Distribution / 改変&再配布
+- Commercial use / 商用利用
+- Modification / 改変
+- Distribution / 再配布
 - Private use / 私的使用 
 
 ### Limitations / 制限事項
