@@ -681,28 +681,53 @@
 		
 
 			<h3>Youtube Audio Library</h3>
-			<div id="genre_background_music_Youtube-Audio-Library"></div>
-			<label><input type="checkbox" name="" class="control_panels">全選択</label>
-
-			<label class="inlineobj_line">
-				<input type="checkbox" name="" data-hashtag='["Youtube Audio Library", "Splashing Around"]' data-href="https://www.youtube.com/channel/UCjDvILf3SYIuBrHv7QojfqA">
-				Splashing Around @ Youtube Audio Library
-			</label>
-
-			<label class="inlineobj_line">
-				<input type="checkbox" name="" data-hashtag='["Youtube Audio Library", "Two Hearts"]' data-href="https://www.youtube.com/channel/UCALNf7YM2pEGJvIHf1zxftA">
-				Two Hearts @ Youtube Audio Library
-			</label>
-
-			<label class="inlineobj_line">
-				<input type="checkbox" name="" data-hashtag='["Youtube Audio Library", "Helium"]' data-href="https://www.youtube.com/channel/UCALNf7YM2pEGJvIHf1zxftA">
-				Helium @ Youtube Audio Library
-			</label>
-
-			<label class="inlineobj_line">
-				<input type="checkbox" name="" data-hashtag='["Youtube Audio Library", "Helium"]' data-href="https://www.youtube.com/channel/UCY-Rb2-JgAgiR_qzsMRq3qA">
-				Raga Legacy @ Youtube Audio Library
-			</label>
+			<script>
+				var contents = [
+					{
+						hashtag: ['Splashing Around'],
+						href: 'https://www.youtube.com/channel/UCjDvILf3SYIuBrHv7QojfqA',
+						context: 'Splashing Around @ Youtube Audio Library',
+						instext: 'Splashing Around @ Youtube Audio Library',
+					},
+					{
+						hashtag: ['Two Hearts'],
+						href: 'https://www.youtube.com/channel/UCALNf7YM2pEGJvIHf1zxftA',
+						context: 'Two Hearts @ Youtube Audio Library',
+						instext: 'Two Hearts @ Youtube Audio Library',
+					},
+					{
+						hashtag: ['Helium'],
+						href: 'https://www.youtube.com/channel/UCALNf7YM2pEGJvIHf1zxftA',
+						context: 'Helium @ Youtube Audio Library',
+						instext: 'Helium @ Youtube Audio Library',
+					},
+					{
+						hashtag: ['Raga Legacy'],
+						href: 'https://www.youtube.com/channel/UCY-Rb2-JgAgiR_qzsMRq3qA',
+						context: 'Raga Legacy @ Youtube Audio Library',
+						instext: 'Raga Legacy @ Youtube Audio Library',
+					},
+				];
+				console.debug(contents);
+				contents.forEach((v,i)=>{
+					var domContent1=document.createElement('label');
+					domContent1.classList.add('inlineobj_line');
+					
+					var hashtag = v.hashtag;
+					hashtag.push('Youtube Audio Library')
+					var domContent2=document.createElement('input');
+					domContent2.type='checkbox';
+					domContent2.dataset.hashtag=JSON.stringify(hashtag);
+					domContent2.dataset.href=JSON.stringify(v.href);
+					domContent2.dataset.instext=JSON.stringify(v.instext);
+					domContent1.appendChild(domContent2);
+					var domContent2=document.createTextNode(v.context);
+					domContent1.appendChild(domContent2);
+				
+					document.querySelectorAll('#genre_background_music').item(0)
+					.appendChild(domContent1);
+				});
+			</script>
 	
 			<h3>NoCopyrightMusic</h3>
 			<script>
