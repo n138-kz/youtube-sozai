@@ -696,16 +696,29 @@
 			<h3>musmus</h3>
 			<div id="genre_background_music_musmus"></div>
 			<label><input type="checkbox" name="" class="control_panels">全選択</label>
-
-			<label class="inlineobj_line">
-				<input type="checkbox" name="" data-hashtag='["musmus", "ひとやすみ"]' data-href="https://musmus.main.jp/">
-				ひとやすみ @ musmus
-			</label>
-
-			<label class="inlineobj_line">
-				<input type="checkbox" name="" data-hashtag='["musmus", "吸血鬼は電気仕掛けの少女に恋をする"]' data-href="https://musmus.main.jp/">
-				吸血鬼は電気仕掛けの少女に恋をする @ musmus
-			</label>
+			<script>
+				var contents = [
+					{
+						hashtag: ['ひとやすみ'],
+						href: 'https://musmus.main.jp/',
+						context: 'ひとやすみ @ musmus',
+						instext: 'ひとやすみ @ musmus',
+						checked: false,
+					},
+					{
+						hashtag: ['吸血鬼は電気仕掛けの少女に恋をする'],
+						href: 'https://musmus.main.jp/',
+						context: '吸血鬼は電気仕掛けの少女に恋をする @ musmus',
+						instext: '吸血鬼は電気仕掛けの少女に恋をする @ musmus',
+						checked: false,
+					},
+				];
+				loadobject_and_set(
+					contents, 
+					['musmus'], 
+					document.querySelectorAll('#genre_background_music').item(0)
+				);
+			</script>
 		
 
 			<h3>Youtube Audio Library</h3>
