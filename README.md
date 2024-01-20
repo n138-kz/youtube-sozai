@@ -21,5 +21,5 @@ Licensed works, modifications, and larger works may be distributed under differe
 - Private use / 私的使用 
 
 ### Limitations / 制限事項
-- Liability / 責任
-- Warranty / 保証
+- Liability / 責任を負わない
+- Warranty / 無保証
