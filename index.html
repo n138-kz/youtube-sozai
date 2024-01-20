@@ -919,32 +919,59 @@
 		</div>
 		<div id="genre_other">
 			<h2>▼その他（敬称省略）</h2>
-			<label><input type="checkbox" name="" class="control_panels" checked>全選択</label>
-	
-			<label class="inlineobj_line">
-				<input type="checkbox" name="" data-hashtag='["icooon-mono"]' data-href="https://icooon-mono.com/" checked>
-				icooon-mono
-			</label>
-			<label class="inlineobj_line">
-				<input type="checkbox" name="" data-hashtag='["いらすとや"]' data-href="https://www.irasutoya.com/" checked>
-				いらすとや
-			</label>
-			<label class="inlineobj_line">
-				<input type="checkbox" name="" data-hashtag='["効果音ラボ"]' data-href="https://soundeffect-lab.info/" checked>
-				効果音ラボ
-			</label>
-			<label class="inlineobj_line">
-				<input type="checkbox" name="" data-hashtag='["イラストAC"]' data-href="https://www.ac-illust.com/" checked>
-				イラストAC
-			</label>
-			<label class="inlineobj_line">
-				<input type="checkbox" name="" data-hashtag='["動画AC"]' data-href="https://video-ac.com/" checked>
-				動画AC
-			</label>
-			<label class="inlineobj_line">
-				<input type="checkbox" name="" data-hashtag='["写真AC"]' data-href="https://www.photo-ac.com/" checked>
-				写真AC
-			</label>
+			<label><input type="checkbox" name="" class="control_panels">全選択</label>
+
+			<script>
+				var contents = [
+					{
+						hashtag: ['icooon-mono'],
+						href: 'https://icooon-mono.com/',
+						context: 'icooon-mono',
+						instext: 'icooon-mono',
+						checked: true,
+					},
+					{
+						hashtag: ['いらすとや'],
+						href: 'https://www.irasutoya.com/',
+						context: 'いらすとや',
+						instext: 'いらすとや',
+						checked: true,
+					},
+					{
+						hashtag: ['効果音ラボ'],
+						href: 'https://soundeffect-lab.info/',
+						context: '効果音ラボ',
+						instext: '効果音ラボ',
+						checked: true,
+					},
+					{
+						hashtag: ['イラストAC'],
+						href: 'https://www.ac-illust.com/',
+						context: 'イラストAC',
+						instext: 'イラストAC',
+						checked: true,
+					},
+					{
+						hashtag: ['動画AC'],
+						href: 'https://video-ac.com/',
+						context: '動画AC',
+						instext: '動画AC',
+						checked: true,
+					},
+					{
+						hashtag: ['写真AC'],
+						href: 'https://www.photo-ac.com/',
+						context: '写真AC',
+						instext: '写真AC',
+						checked: true,
+					},
+				];
+				loadobject_and_set(
+					contents, 
+					['NoCopyrightMusic'], 
+					document.querySelectorAll('#genre_other').item(0)
+				);
+			</script>
 	
 			<script>
 				document.querySelectorAll('#genre_other label>input.control_panels').item(0)
