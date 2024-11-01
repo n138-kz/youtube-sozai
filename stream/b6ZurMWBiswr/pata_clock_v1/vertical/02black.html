@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+<style>
+
+/* ------------------ */
+/* ↓↓↓↓ カスタマイズ設定 ここから ↓↓↓↓ */
+/* Customized settings from here */
+:root {
+    /* ↓数字の色を指定します（例: red, #CCD5FF */
+    /* Specifies the color of the numbers (ex. aqua, #CCD5FF */
+    --clock-txt-color: #FFF;
+
+    /* ↓背景の角丸四角の塗り色を指定します（例: #1A1F78, transparent */
+    /* Specifies the fill color of the rounded squares in the background */
+    --clock-wraper-bg: rgba(65, 65, 65, 0.86);
+
+    /* ↓「none」から「block」に変更することで、全体的な配色を角丸四角の塗り色で統一します */
+    /* By changing from "none" to "block", the overall color scheme is unified with the rounded square fill color. */
+    --blend-layer: none;
+
+    /* ↓背景の角丸四角の塗りにグラデーションを指定したい場合に使用します（例: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%) */
+    /* Use this when you want to specify a gradation for filling a square with rounded corners in the background. */
+    --clock-wraper-img: none;
+
+    /* ↓サイズを1.0を基準に変更します。OBSのブラウザサイズを修正する必要があります（例: 0.92, 1.2, 2.0 */
+    /* Resize based on 1.0. You need to fix the browser size of obs. */
+    --clock-size: 1.0;
+}
+/* Customized settings up to here */
+/* ↑↑↑↑ カスタマイズ設定 ここまで ↑↑↑↑ */
+/* ------------------ */
+
+
+#blend-layer{
+    display: var(--blend-layer);
+    z-index: 100;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--clock-wraper-bg);
+    mix-blend-mode: color-dodge;
+    opacity: 0.54;
+}
+    
+html,body,div,p,span,time{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+body{
+    background-color: #aedded;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+}
+
+
+.timewrap{
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 86px;
+    height: auto;
+    background-color: var(--clock-wraper-bg);
+    background-image: var(--clock-wraper-img);
+    border-radius: 10px;
+    margin: 20px auto;
+    padding:  9px 0;
+    overflow: hidden;
+    zoom: var(--clock-size);
+}
+
+.separator{
+    height: 7px;
+}
+.separator.short{
+    height: 4px;
+}
+
+
+
+.clock_wrap{
+    box-sizing: border-box;
+    position: relative;
+    width: 60px;
+    height: 72px;
+    background-color: #090909;
+    border: 4px solid #333;
+    border-radius: 10px;
+    margin: 0 1px;
+}
+
+.clock_wrap.double-digit{
+    width: 74px;
+    text-indent: 0.5px;
+    letter-spacing: 1px;
+}
+
+
+.clock_wrap > div{
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 54px;
+    line-height: 0;
+    box-shadow: 0 2px 3px rgba(60, 60, 60, 0.75);
+    
+
+    transition: background-color .21s ease-out;
+}
+
+.clock_wrap > div > span{
+    color: var(--clock-txt-color);
+}
+
+.clock_wrap::after,
+.clock_wrap::before{
+    content: '';
+    position: absolute;
+    z-index: 5;
+    width: 1.5px;
+    height: 14px;
+    top: calc(50% - 7px);
+    background-color: #b4b4b4;
+}
+.clock_wrap::after{
+    left: -1.5px;
+}
+.clock_wrap::before{
+    right: -1.5px;
+}
+
+
+.top{
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+.bottom{
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.top.over{
+    background-color: #484848;
+    color: #FFF;
+    height: calc(50% - 1px);
+    bottom: calc(50% + 1px);
+    z-index: 3;
+}
+.top.under{
+    background-color: #313131;
+    color: #FFF;
+    height: calc(50% - 1px);
+    bottom: calc(50% + 1px);
+    z-index: 2;
+}
+.bottom.over{
+    background-color: #484848;
+    color: #FFF;
+    height: 0;
+    top: calc(50% + 1px);
+    z-index: 5;
+}
+.bottom.under{
+    background-color: #484848;
+    color: #FFF;
+    height: calc(50% - 1px);
+    top: calc(50% + 1px);
+    z-index: 4;
+}
+.bottom.shadow{
+    transition-delay: 0.23s;
+    background-color: rgb(36, 36, 36);
+}
+.top span{
+    transform: translateY(15px);    
+}
+.bottom span{
+    transform: translateY(-18px);    
+}
+
+@keyframes motionTop{
+    0%{
+        height: calc(50% - 1.5px);
+    }
+    100%{
+        height: 0;
+    }
+}
+.motion_top{
+    animation: motionTop .24s ease-in;
+    animation-fill-mode: both;
+}
+@keyframes motionBottom{
+    0%{
+        height: 0;
+    }
+    100%{
+        height: calc(50% - 1.5px);
+    }
+}
+.motion_bottom{
+    animation: motionBottom .24s ease-out .23s;
+    animation-fill-mode: both;
+}
+
+
+.date_wrap{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 0px 0;
+}
+.date_wrap .clock_wrap{
+    width: 74px;
+    height: 38px;
+    border-radius: 8px;
+    border-width: 4px;
+}
+
+.date_wrap .clock_wrap + .clock_wrap{
+    margin-top: 3px;
+}
+
+.date_wrap .clock_wrap::after,
+.date_wrap .clock_wrap::before{
+    width: 1.5px;
+    height: 10px;
+    top: calc(50% - 5px);
+}
+.date_wrap .clock_wrap::after{
+    left: -1.5px;
+}
+.date_wrap .clock_wrap::before{
+    right: -1.5px;
+}
+
+.date_wrap .clock_wrap .top{
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+.date_wrap .clock_wrap .bottom{
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.date_wrap .clock_wrap > div{
+    font-size: 22px;
+}
+.date_wrap .clock_wrap > .top span{
+    transform: translateY(6.5px);    
+}
+.date_wrap .clock_wrap > .bottom span{
+    transform: translateY(-8.0px);    
+}
+
+.date_wrap .clock_wrap > .top.over{
+    height: calc(50% - 0.5px);
+    bottom: calc(50% + 0.5px);
+}
+.date_wrap .clock_wrap > .top.under{
+    height: calc(50% - 0.5px);
+    bottom: calc(50% + 0.5px);
+}
+.date_wrap .clock_wrap > .bottom.over{
+    height: 0;
+    top: calc(50% + 0.5px);
+}
+.date_wrap .clock_wrap > .bottom.under{
+    height: calc(50% - 0.5px);
+    top: calc(50% + 0.5px);
+}
+
+
+
+
+.sec_wrap{
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100%;
+    padding: 0px 0;
+}
+.sec_wrap .clock_wrap{
+    width: 36px;
+    height: 40px;
+    border-radius: 8px;
+    border-width: 3.5px;
+}
+
+
+.sec_wrap .clock_wrap::after,
+.sec_wrap .clock_wrap::before{
+    width: 1.5px;
+    height: 10px;
+    top: calc(50% - 5px);
+}
+.sec_wrap .clock_wrap::after{
+    left: -1.5px;
+}
+.sec_wrap .clock_wrap::before{
+    right: -1.5px;
+}
+
+.sec_wrap .clock_wrap .top{
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+.sec_wrap .clock_wrap .bottom{
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.sec_wrap .clock_wrap > div{
+    font-size: 28px;
+}
+.sec_wrap .clock_wrap > .top span{
+    transform: translateY(7.0px);    
+}
+.sec_wrap .clock_wrap > .bottom span{
+    transform: translateY(-9.0px);    
+}
+
+.sec_wrap .clock_wrap > .top.over{
+    height: calc(50% - 0.5px);
+    bottom: calc(50% + 0.5px);
+}
+.sec_wrap .clock_wrap > .top.under{
+    height: calc(50% - 0.5px);
+    bottom: calc(50% + 0.5px);
+}
+.sec_wrap .clock_wrap > .bottom.over{
+    height: 0;
+    top: calc(50% + 0.5px);
+}
+.sec_wrap .clock_wrap > .bottom.under{
+    height: calc(50% - 0.5px);
+    top: calc(50% + 0.5px);
+}
+
+
+</style>
+</head>
+    
+<body>
+
+<div class="timewrap">
+
+    <div id="blend-layer"></div>
+
+    <div class="clock_wrap double-digit">
+        <div class="H0 top over"><span>00</span></div>
+        <div class="H0 bottom over"><span>00</span></div>
+        <div class="H0 top under"><span>00</span></div>
+        <div class="H0 bottom under"><span>00</span></div>
+    </div>
+
+    <div class="separator short"></div>
+
+    <div class="clock_wrap double-digit">
+        <div class="M0 top over"><span>00</span></div>
+        <div class="M0 bottom over"><span>00</span></div>
+        <div class="M0 top under"><span>00</span></div>
+        <div class="M0 bottom under"><span>00</span></div>
+    </div>
+
+    <div class="separator"></div>
+
+    <div class="sec_wrap">
+        <div class="clock_wrap">
+            <div class="S1 top over"><span>0</span></div>
+            <div class="S1 bottom over"><span>0</span></div>
+            <div class="S1 top under"><span>0</span></div>
+            <div class="S1 bottom under"><span>0</span></div>
+        </div>
+    
+        <div class="clock_wrap">
+            <div class="S2 top over"><span>0</span></div>
+            <div class="S2 bottom over"><span>0</span></div>
+            <div class="S2 top under"><span>0</span></div>
+            <div class="S2 bottom under"><span>0</span></div>
+        </div>
+    </div>
+
+    <div class="separator"></div>
+
+    <div class="date_wrap">
+        <div class="clock_wrap">
+            <div class="DATE top over"><span>0/00</span></div>
+            <div class="DATE bottom over"><span>0/00</span></div>
+            <div class="DATE top under"><span>0/00</span></div>
+            <div class="DATE bottom under"><span>0/00</span></div>
+        </div>
+    
+        <div class="clock_wrap">
+            <div class="WEEK top over"><span>SUN</span></div>
+            <div class="WEEK bottom over"><span>SUN</span></div>
+            <div class="WEEK top under"><span>SUN</span></div>
+            <div class="WEEK bottom under"><span>SUN</span></div>
+        </div>    
+    </div>
+
+    
+</div>
+<script>
+    function pataTimer(){
+        const d = new Date();
+
+        let H = d.getHours();
+        if(H<10) { H = '0'+H };
+        const h0 = String(H).substr(0,2);
+        
+        let m = d.getMinutes();
+        if(m<10) { m = '0'+m };
+        const m0 = String(m).substr(0,2);
+                
+        let s = d.getSeconds();
+        if(s<10) { s = '0'+s };
+        const s1 = String(s).substr(0,1);
+        const s2 = String(s).substr(1,1);
+
+        const month = d.getMonth()+1;
+        const date = d.getDate();
+        const dateStr = month + '/' + date;
+        const dayOfWeekStr = [ "SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT" ][d.getDay()];
+
+
+        const prevDATE = document.getElementsByClassName('DATE top under')[0].children[0].innerHTML;
+        const prevWEEK = document.getElementsByClassName('WEEK top under')[0].children[0].innerHTML;
+        if(dateStr != prevDATE){
+            pataMotion('DATE', dateStr);
+        }
+        if(dayOfWeekStr != prevWEEK){
+            pataMotion('WEEK', dayOfWeekStr);
+        }
+
+        const prevH0 = document.getElementsByClassName('H0 top under')[0].children[0].innerHTML;
+        if(h0 != prevH0){
+            pataMotion('H0', h0);
+        }
+
+        const prevM0 = document.getElementsByClassName('M0 top under')[0].children[0].innerHTML;
+        if(m0 != prevM0){
+            pataMotion('M0', m0);
+        }
+
+        const prevS1 = document.getElementsByClassName('S1 top under')[0].children[0].innerHTML;
+        const prevS2 = document.getElementsByClassName('S2 top under')[0].children[0].innerHTML;
+        if(s1 != prevS1){
+            pataMotion('S1', s1);
+        }
+        if(s2 != prevS2){
+            pataMotion('S2', s2);
+        }
+
+    }
+
+
+    function pataMotion(_objClass, _txt){
+
+            document.getElementsByClassName( _objClass + ' top under')[0].children[0].innerHTML = _txt;
+            document.getElementsByClassName( _objClass + ' bottom over')[0].children[0].innerHTML = _txt;
+            
+            const topOvElem = document.getElementsByClassName( _objClass + ' top over')[0];
+            topOvElem.classList.add('motion_top');
+            topOvElem.addEventListener('animationend', function(e){
+                const topUnderElem =  document.getElementsByClassName( _objClass + ' top under')[0];
+                this.children[0].innerHTML = topUnderElem.children[0].innerHTML;
+                topUnderElem.classList.remove('under');
+                topUnderElem.classList.add('over');
+                this.classList.remove('over');
+                this.classList.add('under');
+                this.classList.remove('motion_top');
+
+                e.currentTarget.removeEventListener('animationend', arguments.callee, false);
+            });
+
+            const bottomOvElem  = document.getElementsByClassName( _objClass + ' bottom over')[0];
+            bottomOvElem.classList.add('motion_bottom');
+            document.getElementsByClassName( _objClass + ' bottom under')[0].classList.add('shadow');
+            bottomOvElem.addEventListener('animationend', function(e){
+                const bottomUnderElem =  document.getElementsByClassName( _objClass + ' bottom under')[0];
+                bottomUnderElem.children[0].innerHTML = this.children[0].innerHTML;
+                bottomUnderElem.classList.remove('under');
+                bottomUnderElem.classList.add('over');
+                bottomUnderElem.classList.remove('shadow');
+                this.classList.remove('over');
+                this.classList.add('under');
+                this.classList.remove('motion_bottom');
+
+                e.currentTarget.removeEventListener('animationend', arguments.callee, false);
+            });
+
+    }
+
+
+    function initialTimer(){
+        let s = new Date().getSeconds();
+        if(s%10 == 0){
+            clearInterval(timer01);
+            clearInterval(timer02);
+            setInterval(pataTimer, 1000)
+        }
+    }
+    const timer01 = setInterval(pataTimer, 1000);
+    const timer02 = setInterval(initialTimer, 1000);
+</script>
+
+<!--
+/*
+ * "Oswald" is lisenced under the SIL Open Font License 1.1
+ * https://www.google.com/fonts/attribution
+ * http://scripts.sil.org/OFL
+ */
+-->
+</body>
+</html>
