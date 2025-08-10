@@ -1,5 +1,7 @@
 # [youtube-sozai](https://github.com/n138-kz/youtube-sozai)
 
+[![GitHub Extra Pins](https://github-readme-stats.vercel.app/api/pin/?locale=ja&show_owner=true&theme=graywhite&username=n138-kz&repo=youtube-sozai)](https://github.com/n138-kz/youtube-sozai)
+
 [チャンネルのコンテンツ - YouTube Studio](https://studio.youtube.com/channel/UCOX8Iv1r0V18lbOnohE7lWQ/videos/upload?filter=%5B%5D&amp;sort=%7B%22columnType%22%3A%22date%22%2C%22sortOrder%22%3A%22DESCENDING%22%7D)
 
 ## License
