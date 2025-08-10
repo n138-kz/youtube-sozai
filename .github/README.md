@@ -41,6 +41,10 @@
 
 </div>
 
+## Refs
+
+- [![](https://www.google.com/s2/favicons?size=64&domain=https://github.com)youtube-sozai](https://github.com/n138-kz/youtube-sozai/)
+
 ## License
 
 [![License MIT](https://upload.wikimedia.org/wikipedia/commons/0/0c/MIT_logo.svg)](LICENSE)  
