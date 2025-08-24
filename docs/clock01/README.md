@@ -29,6 +29,7 @@
     font-family: uzura_font;
 }
 ```
+uzura_font: [https://azukifont.com/font/uzura.html](http://azukifont.com/)
 #### 影文字
 ```css
 :root, html, body {
