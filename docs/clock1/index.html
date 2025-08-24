@@ -7,9 +7,28 @@
         :root, html, body {
             margin: 0;
             padding: 0;
+            --text-color: azure;
+            --text-shadow-size: 2px;
+            --text-shadow-color: black;
         }
         body>div:first-child {
             background-color: tan;
+            width: 115px;
+            text-align: center;
+            color: var(--text-color);
+            text-shadow: var(--text-shadow-size) var(--text-shadow-size) var(--text-shadow-color);
+        }
+        span[data-id="t"] {
+            font-size: 32px;
+            border-bottom-color: black;
+            border-bottom-width: 3px;
+            border-bottom-style: double;
+        }
+        span[data-id="t"] span[data-id="s"] {
+            font-size: 16px;
+        }
+        span[data-id="d"] {
+            font-size: 16px;
         }
     </style>
     <script>
@@ -30,11 +49,67 @@
             for (let i = 0; i < target.length; i++) {
                 target[i].innerText = '';
             }
+            const dom = [];
+            {
+                dom[0] = document.createElement('span');
+                dom[0].dataset.id = 't';
+                dom[1] = document.createElement('span');
+                dom[1].dataset.id = 'h';
+                dom[1].innerText = '0';
+                dom[0].appendChild(dom[1]);
+                dom[1] = document.createElement('span');
+                dom[1].innerText = ':';
+                dom[0].appendChild(dom[1]);
+                dom[1] = document.createElement('span');
+                dom[1].dataset.id = 'm';
+                dom[1].innerText = '00';
+                dom[0].appendChild(dom[1]);
+                dom[1] = document.createElement('span');
+                dom[1].innerText = ' ';
+                dom[0].appendChild(dom[1]);
+                dom[1] = document.createElement('span');
+                dom[1].dataset.id = 's';
+                dom[1].innerText = '00';
+                dom[0].appendChild(dom[1]);
+                target[0].appendChild(dom[0]);
+            }
+            {
+                dom[0] = document.createElement('span');
+                dom[0].dataset.id = 'd';
+                dom[1] = document.createElement('span');
+                dom[1].dataset.id = 'm';
+                dom[1].innerText = '0';
+                dom[0].appendChild(dom[1]);
+                dom[1] = document.createElement('span');
+                dom[1].innerText = '月';
+                dom[0].appendChild(dom[1]);
+                dom[1] = document.createElement('span');
+                dom[1].dataset.id = 'd1';
+                dom[1].innerText = '00';
+                dom[0].appendChild(dom[1]);
+                dom[1] = document.createElement('span');
+                dom[1].innerText = '日';
+                dom[0].appendChild(dom[1]);
+                dom[1] = document.createElement('span');
+                dom[1].innerText = '　';
+                dom[0].appendChild(dom[1]);
+                dom[1] = document.createElement('span');
+                dom[1].dataset.id = 'd2';
+                dom[1].innerText = '曜';
+                dom[0].appendChild(dom[1]);
+                console.log(dom[0]);
+                
+                target[1].appendChild(dom[0]);
+            }
+
             setInterval(()=>{
                 const time = new Date();
-                target[0].innerText = `${time.getHours()}:${time.getMinutes()} ${time.getSeconds()}`;
-                target[0].innerText += `${time.getMonth()+1}月${time.getDate()}日`;
-                target[0].innerText += ` ${dayToDay(time.getDay())}`;
+                document.querySelector('span[data-id="t"] span[data-id="h"]').innerText = `${time.getHours()}`;
+                document.querySelector('span[data-id="t"] span[data-id="m"]').innerText = `00${time.getMinutes()}`.substr(-2);
+                document.querySelector('span[data-id="t"] span[data-id="s"]').innerText = `00${time.getSeconds()}`.substr(-2);
+                document.querySelector('span[data-id="d"] span[data-id="m"]').innerText = `${time.getMonth()+1}`;
+                document.querySelector('span[data-id="d"] span[data-id="d1"]').innerText = `${time.getDate()}`;
+                document.querySelector('span[data-id="d"] span[data-id="d2"]').innerText = `${dayToDay(time.getDay())}`;
             })
         });
     </script>
