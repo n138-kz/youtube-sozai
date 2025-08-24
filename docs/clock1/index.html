@@ -7,28 +7,37 @@
         :root, html, body {
             margin: 0;
             padding: 0;
+            background-color: rgba(0, 0, 0, 0);
+            background-color: green;
+            overflow: hidden;
             --text-color: azure;
             --text-shadow-size: 2px;
             --text-shadow-color: black;
         }
         body>div:first-child {
-            background-color: tan;
-            width: 115px;
+            width: 500px;
             text-align: center;
             color: var(--text-color);
             text-shadow: var(--text-shadow-size) var(--text-shadow-size) var(--text-shadow-color);
+            font-family: uzura_font;
         }
         span[data-id="t"] {
-            font-size: 32px;
-            border-bottom-color: black;
-            border-bottom-width: 3px;
-            border-bottom-style: double;
+            font-size: 128px;
         }
         span[data-id="t"] span[data-id="s"] {
-            font-size: 16px;
+            font-size: 64px;
         }
         span[data-id="d"] {
-            font-size: 16px;
+            font-size: 96px;
+            border-top-color: azure;
+            border-top-width: 10px;
+            border-top-style: solid;
+        }
+        span[data-id="d"] span[data-id="d2"] {
+            background-color: azure;
+            border-radius: 100px;
+            text-shadow: 0 0;
+            color: black;
         }
     </style>
     <script>
@@ -65,9 +74,6 @@
                 dom[1].innerText = '00';
                 dom[0].appendChild(dom[1]);
                 dom[1] = document.createElement('span');
-                dom[1].innerText = ' ';
-                dom[0].appendChild(dom[1]);
-                dom[1] = document.createElement('span');
                 dom[1].dataset.id = 's';
                 dom[1].innerText = '00';
                 dom[0].appendChild(dom[1]);
@@ -89,9 +95,6 @@
                 dom[0].appendChild(dom[1]);
                 dom[1] = document.createElement('span');
                 dom[1].innerText = '日';
-                dom[0].appendChild(dom[1]);
-                dom[1] = document.createElement('span');
-                dom[1].innerText = '　';
                 dom[0].appendChild(dom[1]);
                 dom[1] = document.createElement('span');
                 dom[1].dataset.id = 'd2';
