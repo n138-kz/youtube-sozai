@@ -121,5 +121,20 @@
         <div></div>
         <div></div>
     </div>
+    <div style="@media not screen { display: none; };margin-top: 100px;" id="block_howtouse_01">
+        <script>
+            document.addEventListener('DOMContentLoaded', ()=>{
+                if(/OBS/g.test(window.navigator.appVersion)){
+                    document.querySelector('#block_howtouse_01').remove();
+                }
+            });
+        </script>
+        <style>
+            #block_howtouse_01 {
+                font-size: 32pt;;
+            }
+        </style>
+        <p>使い方は<a href="https://github.com/n138-kz/youtube-sozai/tree/main/docs/clock01">GitHub</a>参照</p>
+    </div>
 </body>
 </html>
