@@ -165,6 +165,10 @@
                     <th>背景色(全体)</th>
                     <td><input type="button" value="透過" onclick="console.log(`customBGColor: transparent`);document.body.style.backgroundColor='rgba(0,0,0,0)';"><input type="color" id="customBGColor" value="#008000" onchange="console.log(`customBGColor: ${this.value}`);document.body.style.backgroundColor=this.value" onclick="console.log(`customBGColor: ${this.value}`);document.body.style.backgroundColor=this.value"></td>
                 </tr>
+                <tr>
+                    <th>背景色(部分)</th>
+                    <td><input type="button" value="透過" onclick="console.log(`customBGColor: transparent`);document.body.children.item(0).style.backgroundColor='rgba(0,0,0,0)';"><input type="color" id="customBGColor" value="#008000" onchange="console.log(`customBGColor: ${this.value}`);document.body.children.item(0).style.backgroundColor=this.value" onclick="console.log(`customBGColor: ${this.value}`);document.body.children.item(0).style.backgroundColor=this.value"></td>
+                </tr>
                 </tr>
             </tbody>
         </table>
