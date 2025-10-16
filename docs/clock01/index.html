@@ -139,6 +139,35 @@
             }
         </style>
         <p>使い方は<a href="https://github.com/n138-kz/youtube-sozai/tree/main/docs/clock01">GitHub</a>参照</p>
+        <style>
+            table, th, td {
+                border-color: black;
+                border-width: 1px;
+                border-style: solid;
+            }
+            table {
+                background-color: silver;
+            }
+            table td {
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+            table td input {
+                vertical-align: middle;
+            }
+            table td label {
+                user-select: none;
+            }
+        </style>
+        <table>
+            <tbody>
+                <tr>
+                    <th>背景色(全体)</th>
+                    <td><input type="button" value="透過" onclick="console.log(`customBGColor: transparent`);document.body.style.backgroundColor='rgba(0,0,0,0)';"><input type="color" id="customBGColor" value="#008000" onchange="console.log(`customBGColor: ${this.value}`);document.body.style.backgroundColor=this.value" onclick="console.log(`customBGColor: ${this.value}`);document.body.style.backgroundColor=this.value"></td>
+                </tr>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </body>
 </html>
