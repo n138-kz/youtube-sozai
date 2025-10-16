@@ -7,18 +7,25 @@
         :root, html, body {
             margin: 0;
             padding: 0;
-            background-color: green;
+            background-color: rgba(0,0,0,0);
             overflow: hidden;
             --text-color: azure;
             --text-shadow-size: 8px;
             --text-shadow-color: #333;
             font-family: uzura_font;
+            --default-green: rgb(0,128,0);
+        }
+        body {
+            background-color: green;
         }
         body>div:first-child {
             width: 500px;
             text-align: center;
             color: var(--text-color);
             text-shadow: var(--text-shadow-size) var(--text-shadow-size) var(--text-shadow-color);
+        }
+        .hidden {
+            display: none;
         }
         span[data-id="t"] {
             font-size: 128px;
@@ -137,6 +144,53 @@
         <p>使い方は<a href="https://github.com/n138-kz/youtube-sozai/tree/main/docs/clock01">GitHub</a>参照</p>
         <script language="javascript" async src="//ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=3755829&pid=892177265"></script><noscript><a href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3755829&pid=892177265" rel="nofollow"><img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3755829&pid=892177265" border="0"></a></noscript>
         <script language="javascript" async src="//ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=3755829&pid=892177270"></script><noscript><a href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3755829&pid=892177270" rel="nofollow"><img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3755829&pid=892177270" border="0"></a></noscript>
+        <style>
+            table, th, td {
+                border-color: black;
+                border-width: 1px;
+                border-style: solid;
+            }
+            table {
+                background-color: silver;
+            }
+            table td {
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+            table td input {
+                vertical-align: middle;
+            }
+            table td label {
+                user-select: none;
+            }
+        </style>
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>全体</th>
+                    <th>部分</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>背景色</th>
+                    <td><input type="button" value="透過" onclick="console.log(`customBGColor: transparent`);document.body.style.backgroundColor='rgba(0,0,0,0)';"><br><input type="color" id="customBGColor" value="#008000" onchange="console.log(`customBGColor: ${this.value}`);document.body.style.backgroundColor=this.value" onclick="console.log(`customBGColor: ${this.value}`);document.body.style.backgroundColor=this.value"></td>
+                    <td><input type="button" value="透過" onclick="console.log(`customBGColor: transparent`);document.body.children.item(0).style.backgroundColor='rgba(0,0,0,0)';"><br><input type="color" id="customBGColor" value="#008000" onchange="console.log(`customBGColor: ${this.value}`);document.body.children.item(0).style.backgroundColor=this.value" onclick="console.log(`customBGColor: ${this.value}`);document.body.children.item(0).style.backgroundColor=this.value"></td>
+                </tr>
+                <tr>
+                    <th>時計表示</th>
+                    <td colspan="2">
+                        <div>
+                            <label><input type="checkbox" checked="true" onclick="document.body.children.item(0).children.item(0).classList.toggle('hidden')">時間</label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" checked="true" onclick="document.body.children.item(0).children.item(1).classList.toggle('hidden')">日付</label>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </body>
 </html>
