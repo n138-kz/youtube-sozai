@@ -59,6 +59,7 @@
             const t2 = nowtime.querySelector('span[data-id="t2"]');
             const d1 = nowtime.querySelector('span[data-id="d1"]');
             const d2 = nowtime.querySelector('span[data-id="d2"]');
+            const dayNames = ['日', '月', '火', '水', '木', '金', '土'];
             function updateTime() {
                 const now = new Date();
                 t1.textContent = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
