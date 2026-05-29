@@ -1,0 +1,13 @@
+@charset 'UTF-8';
+:root{
+    --color-green: rgb(0,128,0,1);
+    --color-transparent: rgb(0,0,0,0);
+    --text-color: #fff;
+    --text-color-str-live: #ff4500;
+    --text-size: 32pt;
+    --text-font: uzura_font;
+    --text-shadow-size: 8px;
+    --text-shadow-color: #333;
+    --background-color: rgba(0,0,0,0);
+    --background-color-itemblock: #333;
+}
