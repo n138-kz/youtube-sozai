@@ -2,7 +2,7 @@
 :root{
     --color-green: rgb(0,128,0,1);
     --color-transparent: rgb(0,0,0,0);
-    --text-color: black;
+    --text-color: #fff;
     --text-size: 32pt;
     --text-font: uzura_font;
     --text-shadow-size: 8px;
