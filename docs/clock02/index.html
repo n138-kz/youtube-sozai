@@ -73,6 +73,36 @@
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            const colorDefaultFontTextInput = document.getElementById('color-default-font-text');
+            const colorLiveFontTextInput = document.getElementById('color-live-font-text');
+            const backgroundColorDefaultInput = document.getElementById('color-default-style-background');
+            const backgroundColorItemBlockInput = document.getElementById('color-itemblock-style-background');
+
+            colorDefaultFontTextInput.addEventListener('input', (event) => {
+                const newColor = event.target.value;
+                document.documentElement.style.setProperty('--text-color', newColor);
+            });
+            colorDefaultFontTextInput.value = getComputedStyle(document.documentElement).getPropertyValue('--text-color').trim();
+
+            colorLiveFontTextInput.addEventListener('input', (event) => {
+                const newColor = event.target.value;
+                document.documentElement.style.setProperty('--text-color-str-live', newColor);
+            });
+            colorLiveFontTextInput.value = getComputedStyle(document.documentElement).getPropertyValue('--text-color-str-live').trim();
+
+            backgroundColorDefaultInput.addEventListener('input', (event) => {
+                const newColor = event.target.value;
+                document.documentElement.style.setProperty('--background-color', newColor);
+            });
+            backgroundColorDefaultInput.value = getComputedStyle(document.documentElement).getPropertyValue('--background-color').trim();
+
+            backgroundColorItemBlockInput.addEventListener('input', (event) => {
+                const newColor = event.target.value;
+                document.documentElement.style.setProperty('--background-color-itemblock', newColor);
+            });
+            backgroundColorItemBlockInput.value = getComputedStyle(document.documentElement).getPropertyValue('--background-color-itemblock').trim();
+        });
+        document.addEventListener('DOMContentLoaded', () => {
             const nowtime = document.getElementById('nowtime');
             const t1 = nowtime.querySelector('span[data-id="t1"]');
             const t2 = nowtime.querySelector('span[data-id="t2"]');
