@@ -42,6 +42,7 @@
 ## Refs
 
 - [![](https://www.google.com/s2/favicons?size=64&domain=https://github.com)youtube-sozai](https://github.com/n138-kz/youtube-sozai/)
+- [youtube-sozai](https://n138-kz.github.io/youtube-sozai/)
 
 ## License
 
