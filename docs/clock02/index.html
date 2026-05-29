@@ -16,6 +16,22 @@
 			font-family: var(--text-font);
 		}
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const nowtime = document.getElementById('nowtime');
+            const t1 = nowtime.querySelector('span[data-id="t1"]');
+            const t2 = nowtime.querySelector('span[data-id="t2"]');
+            const d1 = nowtime.querySelector('span[data-id="d1"]');
+            function updateTime() {
+                const now = new Date();
+                t1.textContent = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
+                d1.textContent = `${String(now.getMonth() + 1).padStart(2, '0')}/${String(now.getDate()).padStart(2, '0')}`;
+                t2.textContent = `${String(now.getSeconds()).padStart(2, '0')}`;
+            }
+            setInterval(updateTime, 1000);
+            updateTime();
+        });
+    </script>
 </head>
 <body>
 </body>
