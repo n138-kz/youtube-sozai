@@ -62,9 +62,20 @@
             const dayNames = ['日', '月', '火', '水', '木', '金', '土'];
             function updateTime() {
                 const now = new Date();
-                t1.textContent = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
+                const t1h = document.createElement('span');
+                t1h.textContent = String(now.getHours()).padStart(2, '0');
+                const t1m = document.createElement('span');
+                t1m.textContent = String(now.getMinutes()).padStart(2, '0');
+                const t1s = document.createElement('span');
+                t1s.textContent = String(now.getSeconds()).padStart(2, '0');
+                const t1colon = document.createElement('span');
+                t1colon.textContent = ':';
+                t1colon.style.animation = 'colon-blink 1s step-start infinite';
+
+                t1.innerHTML = `${t1h.outerHTML}${t1colon.outerHTML}${t1m.outerHTML}`;
                 d1.textContent = `${String(now.getMonth() + 1).padStart(2, '0')}/${String(now.getDate()).padStart(2, '0')}`;
-                t2.textContent = `${String(now.getSeconds()).padStart(2, '0')}`;
+                d2.textContent = `${dayNames[now.getDay()]}`;
+                t2.innerHTML = t1s.outerHTML;
             }
             setInterval(updateTime, 1000);
             updateTime();
