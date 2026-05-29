@@ -37,6 +37,15 @@
         #nowtime [data-id="t2"] {
             font-size: 0.5em;
         }
+        #nowtime [data-id="d2"] {
+            font-size: 0.5em;
+        }
+        #nowtime [data-id="d2"]::before {
+            content: '(';
+        }
+        #nowtime [data-id="d2"]::after {
+            content: ')';
+        }
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
