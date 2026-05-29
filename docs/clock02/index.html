@@ -119,7 +119,7 @@
                 t1s.textContent = String(now.getSeconds()).padStart(2, '0');
                 const t1colon = document.createElement('span');
                 t1colon.textContent = ':';
-                t1colon.style.animation = 'colon-blink 1s step-start infinite';
+                t1colon.style.animation = 'blink-animation 1s step-start infinite';
 
                 t1.innerHTML = `${t1h.outerHTML}${t1colon.outerHTML}${t1m.outerHTML}`;
                 d1.textContent = `${String(now.getMonth() + 1).padStart(2, '0')}/${String(now.getDate()).padStart(2, '0')}`;
