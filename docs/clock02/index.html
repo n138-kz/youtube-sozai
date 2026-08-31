@@ -95,6 +95,7 @@
                 document.getElementById('print-color-default-font-text').innerText = newColor;
             });
             colorDefaultFontTextInput.value = getComputedStyle(document.documentElement).getPropertyValue('--text-color').trim();
+            colorDefaultFontTextInput.dispatchEvent(startupEvent);
 
             colorLiveFontTextInput.addEventListener('input', (event) => {
                 const newColor = event.target.value;
@@ -102,6 +103,7 @@
                 document.getElementById('print-color-live-font-text').innerText = newColor;
             });
             colorLiveFontTextInput.value = getComputedStyle(document.documentElement).getPropertyValue('--text-color-str-live').trim();
+            colorLiveFontTextInput.dispatchEvent(startupEvent);
 
             backgroundColorDefaultInput.addEventListener('input', (event) => {
                 const newColor = event.target.value;
@@ -109,6 +111,7 @@
                 document.getElementById('print-color-default-style-background').innerText = newColor;
             });
             backgroundColorDefaultInput.value = getComputedStyle(document.documentElement).getPropertyValue('--background-color').trim();
+            backgroundColorDefaultInput.dispatchEvent(startupEvent);
 
             backgroundColorItemBlockInput.addEventListener('input', (event) => {
                 const newColor = event.target.value;
@@ -116,6 +119,7 @@
                 document.getElementById('print-color-itemblock-style-background').innerText = newColor;
             });
             backgroundColorItemBlockInput.value = getComputedStyle(document.documentElement).getPropertyValue('--background-color-itemblock').trim();
+            backgroundColorItemBlockInput.dispatchEvent(startupEvent);
         });
         document.addEventListener('DOMContentLoaded', () => {
             const nowtime = document.getElementById('nowtime');
