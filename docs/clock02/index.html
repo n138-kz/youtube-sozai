@@ -87,6 +87,8 @@
             const backgroundColorDefaultInput = document.getElementById('color-default-style-background');
             const backgroundColorItemBlockInput = document.getElementById('color-itemblock-style-background');
 
+            const startupEvent = new Event('input', { bubbles: true });
+
             colorDefaultFontTextInput.addEventListener('input', (event) => {
                 const newColor = event.target.value;
                 document.documentElement.style.setProperty('--text-color', newColor);
