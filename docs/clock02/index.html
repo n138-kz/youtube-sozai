@@ -118,7 +118,7 @@
                 document.getElementById('print-color-default-font-text').innerText = newColor;
             });
             colorDefaultFontTextInput.value = getComputedStyle(document.documentElement).getPropertyValue('--text-color').trim();
-            if (!isOBS) {
+            if (!isOBS || document.body.clientWidth>200) {
                 colorDefaultFontTextInput.dispatchEvent(startupEvent);
             }
 
@@ -128,7 +128,7 @@
                 document.getElementById('print-color-live-font-text').innerText = newColor;
             });
             colorLiveFontTextInput.value = getComputedStyle(document.documentElement).getPropertyValue('--text-color-str-live').trim();
-            if (!isOBS) {
+            if (!isOBS || document.body.clientWidth>200) {
                 colorLiveFontTextInput.dispatchEvent(startupEvent);
             }
 
@@ -138,7 +138,7 @@
                 document.getElementById('print-color-default-style-background').innerText = newColor;
             });
             backgroundColorDefaultInput.value = getComputedStyle(document.documentElement).getPropertyValue('--background-color').trim();
-            if (!isOBS) {
+            if (!isOBS || document.body.clientWidth>200) {
                 backgroundColorDefaultInput.dispatchEvent(startupEvent);
             }
 
@@ -148,7 +148,7 @@
                 document.getElementById('print-color-itemblock-style-background').innerText = newColor;
             });
             backgroundColorItemBlockInput.value = getComputedStyle(document.documentElement).getPropertyValue('--background-color-itemblock').trim();
-            if (!isOBS) {
+            if (!isOBS || document.body.clientWidth>200) {
                 backgroundColorItemBlockInput.dispatchEvent(startupEvent);
             }
         });
