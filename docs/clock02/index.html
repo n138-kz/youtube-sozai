@@ -100,7 +100,6 @@
             const backgroundColorDefaultInput = document.getElementById('color-default-style-background');
             const backgroundColorItemBlockInput = document.getElementById('color-itemblock-style-background');
 
-            const isOBS = navigator.userAgent.toLowerCase().includes('obs');
             const startupEvent = new Event('input', { bubbles: true });
 
             colorDefaultFontTextInput.addEventListener('input', (event) => {
@@ -109,7 +108,7 @@
                 document.getElementById('print-color-default-font-text').innerText = newColor;
             });
             colorDefaultFontTextInput.value = getComputedStyle(document.documentElement).getPropertyValue('--text-color').trim();
-            if (!isOBS) {
+            if (!window.obsStudio) {
                 colorDefaultFontTextInput.dispatchEvent(startupEvent);
             }
 
@@ -119,7 +118,7 @@
                 document.getElementById('print-color-live-font-text').innerText = newColor;
             });
             colorLiveFontTextInput.value = getComputedStyle(document.documentElement).getPropertyValue('--text-color-str-live').trim();
-            if (!isOBS) {
+            if (!window.obsStudio) {
                 colorLiveFontTextInput.dispatchEvent(startupEvent);
             }
 
@@ -129,7 +128,7 @@
                 document.getElementById('print-color-default-style-background').innerText = newColor;
             });
             backgroundColorDefaultInput.value = getComputedStyle(document.documentElement).getPropertyValue('--background-color').trim();
-            if (!isOBS) {
+            if (!window.obsStudio) {
                 backgroundColorDefaultInput.dispatchEvent(startupEvent);
             }
 
@@ -139,7 +138,7 @@
                 document.getElementById('print-color-itemblock-style-background').innerText = newColor;
             });
             backgroundColorItemBlockInput.value = getComputedStyle(document.documentElement).getPropertyValue('--background-color-itemblock').trim();
-            if (!isOBS) {
+            if (!window.obsStudio) {
                 backgroundColorItemBlockInput.dispatchEvent(startupEvent);
             }
         });
