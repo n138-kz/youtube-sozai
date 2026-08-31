@@ -84,9 +84,15 @@
         }
     </style>
     <script>
-        function setTransparentColor(caller) {
-            console.log(caller);
-            
+        function setTransparentColor(data_setid) {
+            console.debug(data_setid);
+
+            const object=document.getElementById(data_setid);
+            console.debug(object);
+
+            const newColor = 'rgb(0,0,0,0)';
+            console.debug(newColor);
+
         }
         document.addEventListener('DOMContentLoaded', () => {
             const colorDefaultFontTextInput = document.getElementById('color-default-font-text');
