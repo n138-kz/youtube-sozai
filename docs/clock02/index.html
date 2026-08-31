@@ -275,11 +275,74 @@
             </tr>
             <tr>
                 <td>カスタムCSS</td>
-                <td><textarea style="width: stretch; height: 3em;">:root {--text-size: 24pt;--text-color-str-live: #fff;} body { background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden; } .ad-container,#social_icon,iframe {display:none;}</textarea></td>
+                <td><textarea style="width: stretch; height: 3em;" onclick="this.select()">
+:root {
+	--text-size: 24pt;
+	--text-color-str-live: #ff4500;
+	--text-color: #ffffff;
+	--background-color: rgba(0,0,0,0);
+	--background-color-itemblock: #333;
+}
+body {
+	background-color: rgba(0,0,0,0);
+	margin: 0px auto;
+	overflow: hidden;
+	color: #fff;
+}
+body > *:not(#nowtime) {
+    display: none !important;
+}
+[data-id="l1"] {
+	width: fit-content !important;
+	display: flex !important;
+	align-items: center;
+	justify-content: center;
+	gap: 4px;
+}
+[data-id="l3"] {
+	font-size: 16pt;
+}
+[data-id="l3"] [data-id="d2"] {
+	font-size: 12pt;
+}
+                </textarea></td>
             </tr>
             <tr>
                 <td>カスタムCSS（LIVEの点滅無し）</td>
-                <td><textarea style="width: stretch; height: 3em;">:root {--text-size: 24pt;--text-color-str-live: #fff;} body { background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden; } .ad-container,#social_icon,iframe {display:none;}#nowtime div[data-id="l1"]{animation:none;}</textarea></td>
+                <td><textarea style="width: stretch; height: 3em;" onclick="this.select()">
+:root {
+	--text-size: 24pt;
+	--text-color-str-live: #ff4500;
+	--text-color: #ffffff;
+	--background-color: rgba(0,0,0,0);
+	--background-color-itemblock: #333;
+}
+body {
+	background-color: rgba(0,0,0,0);
+	margin: 0px auto;
+	overflow: hidden;
+	color: #fff;
+}
+body > *:not(#nowtime) {
+    display: none !important;
+}
+[data-id="l1"] {
+	width: fit-content !important;
+	display: flex !important;
+	align-items: center;
+	justify-content: center;
+	gap: 4px;
+}
+[data-id="l3"] {
+	font-size: 16pt;
+}
+[data-id="l3"] [data-id="d2"] {
+	font-size: 12pt;
+}
+#nowtime div[data-id="l1"]{
+    animation: none;
+}
+                </textarea></td>
             </tr>
         </table>
     </div>
