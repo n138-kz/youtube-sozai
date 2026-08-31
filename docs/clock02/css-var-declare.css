@@ -8,6 +8,6 @@
     --text-font: uzura_font;
     --text-shadow-size: 8px;
     --text-shadow-color: #333;
-    --background-color: rgba(0,0,0,0);
+    --background-color: var(--color-transparent);
     --background-color-itemblock: #333;
 }
