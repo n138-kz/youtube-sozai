@@ -172,7 +172,8 @@
                 t1colon.style.animation = 'blink-animation 1s step-start infinite';
 
                 t1.innerHTML = `${t1h.outerHTML}${t1colon.outerHTML}${t1m.outerHTML}`;
-                d1.textContent = `${String(now.getMonth() + 1).padStart(2, '0')}/${String(now.getDate()).padStart(2, '0')}`;
+                d1.textContent = `${String(now.getMonth() + 1).padStart(2, '0')}/${String(now.getDate()).padStart(2, '0')}`; /* * mm/dd * */
+                d1.textContent = `${String(now.getMonth() + 1)}/${String(now.getDate()).padStart(2, '0')}`; /* * m/dd * */
                 d2.textContent = `${dayNames[now.getDay()]}`;
                 t2.innerHTML = t1s.outerHTML;
             }
